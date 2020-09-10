@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function RegisterShop() {
+function RegisterShop({setCurrentUser}) {
     const [formData, setFormData] = useState({})
 
     const handleChange = (evt) => {
