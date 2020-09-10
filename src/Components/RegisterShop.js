@@ -20,7 +20,7 @@ function RegisterShop() {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                // setCurrentUser(data)
+                setCurrentUser(data)
             })
     }
     return (
