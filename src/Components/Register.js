@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 
 function Register({currentUser, setCurrentUser}) {
   const [formData, setFormData] = useState({})
@@ -72,6 +73,7 @@ function Register({currentUser, setCurrentUser}) {
       
           
             <button className="button" type="reset" id="cancel-button">Cancel</button>
+            <div> Want to register as a coffeeeshop? Email info@coffeepassport to verify and <Link className="button is-warning" to="/verifyshop">Register</Link></div>
         
         </div>
       </div>
