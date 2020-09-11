@@ -18,10 +18,12 @@ import Search from "./Components/Search"
 import CoffeeShop from "./Components/CoffeeShop"
 import RegisterShop from "./Components/RegisterShop"
 import Users from "./Components/Users"
+import MyCoffeeShops from "./Components/MyCoffeeShops"
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
   const [currentSearch, setCurrentSearch] = useState(undefined)
+  const [currentShop, setCurrentShop] = useState(undefined)
 
 
   const logOut = () => {
@@ -93,8 +95,11 @@ function App() {
         <Route path="/search">
           <Search currentSearch={currentSearch} setCurrentSearch={setCurrentSearch} />
         </Route>
-        <Route path="/alluser">
-          <Users/>
+        <Route path="/allusers">
+          <Users currentShop = {currentShop} setCurrentShop={setCurrentShop}/>
+        </Route>
+        <Route path="/mycoffeeshops">
+          <MyCoffeeShops currentUser ={currentUser} setCurrentShop={setCurrentShop}/>
         </Route>
       </Switch>
     </Router>
