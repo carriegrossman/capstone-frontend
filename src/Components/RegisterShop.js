@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 
-
 const RegisterShop = ({ currentUser, setCurrentUser }) => {
     const [formData, setFormData] = useState({})
     const [currentShop, setCurrentShop] = useState(undefined)

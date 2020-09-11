@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 
 //Components
@@ -23,6 +23,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
   const [currentSearch, setCurrentSearch] = useState(undefined)
 
+
   const logOut = () => {
     setCurrentUser(undefined)
   }
@@ -35,6 +36,7 @@ function App() {
         if (data.loggedin === "true") setCurrentUser(data.user)
       })
   }, [])
+
 
 
   return (
@@ -83,7 +85,6 @@ function App() {
         </Route>
         <Route path="/userhome">
           {currentUser && currentUser.owner && <RegisterShop currentUser={currentUser}/>}
-
         </Route>
         <Route path="/passport">
           {currentUser && <div>Welcome {currentUser.username}</div>}
