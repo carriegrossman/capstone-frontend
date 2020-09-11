@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.card{
+  width: 200px;
+  padding: 20px;
+  height: 200px;
+  margin: 10px;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.registerForm{
+  width: 350px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}

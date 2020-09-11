@@ -13,7 +13,9 @@ const CoffeeShop = (props) => {
 
     if (!coffeeShopData) return <div>loading...</div>
     return (<div>
-        {coffeeShopData.address}
+        <div>{coffeeShopData.name}</div>
+        <div>{coffeeShopData.address}</div>
+        <div>{coffeeShopData.state}</div>
     </div>)
 
 }
