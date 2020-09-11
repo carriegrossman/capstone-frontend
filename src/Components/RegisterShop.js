@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 
+
 const RegisterShop = ({ currentUser, setCurrentUser }) => {
     const [formData, setFormData] = useState({})
 
@@ -18,6 +19,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 setCurrentUser(data)
             })
     }
