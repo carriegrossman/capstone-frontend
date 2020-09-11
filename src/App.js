@@ -17,6 +17,7 @@ import RegisterOwner from "./Components/RegisterOwner"
 import Search from "./Components/Search"
 import CoffeeShop from "./Components/CoffeeShop"
 import RegisterShop from "./Components/RegisterShop"
+import Users from "./Components/Users"
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <Router>
-      {currentUser && <Redirect to="/userhome" />}
+      {/* {currentUser && <Redirect to="/userhome" />} */}
       <nav className="navbar">
         <div className="navbar-end">
           <Link className="navbar-item" to="/login">Login</Link>
@@ -56,31 +57,34 @@ function App() {
       <Switch>
         <Route path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
-          {currentUser && currentUser.coffeeshop && <Redirect to="/userhome" />}
+          {currentUser && currentUser.owner && <Redirect to="/userhome" />}
         </Route>
         <Route path="/register">
           <div>
             <Register setCurrentUser={setCurrentUser} />
-            {currentUser &&
+            {/* {currentUser &&
               <React.Fragment>
-                {currentUser.coffeeshop && <Redirect to="/coffeeshop" />}
-                {!currentUser.coffeeshop && <Redirect to="/userhome" />}
+                {currentUser.owner && <Redirect to="/coffeeshop" />}
+                {!currentUser.owner && <Redirect to="/userhome" />}
               </React.Fragment>
-            }
+            } */}
           </div>
         </Route>
         <Route path="/verifyshop">
           <Verification />
         </Route>
-        <Route path="/registershop">
+        <Route path="/registerowner">
           <RegisterOwner setCurrentUser={setCurrentUser} />
+        </Route>
+        <Route path="/registershop">
+          <RegisterShop setCurrentUser={setCurrentUser} currentUser={currentUser}/>
         </Route>
         <Route path="/about">
         </Route>
         <Route path="/coffeeshop/:id" component={CoffeeShop}>
         </Route>
         <Route path="/userhome">
-          {currentUser && currentUser.coffeeshop && <RegisterShop currentUser={currentUser}/>}
+          {currentUser && currentUser.owner && <RegisterShop currentUser={currentUser}/>}
         </Route>
         <Route path="/passport">
           {currentUser && <div>Welcome {currentUser.username}</div>}
@@ -88,6 +92,9 @@ function App() {
         </Route>
         <Route path="/search">
           <Search currentSearch={currentSearch} setCurrentSearch={setCurrentSearch} />
+        </Route>
+        <Route path="/alluser">
+          <Users/>
         </Route>
       </Switch>
     </Router>

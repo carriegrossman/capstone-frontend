@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 const RegisterShop = ({ currentUser, setCurrentUser }) => {
     const [formData, setFormData] = useState({})
+    const [currentShop, setCurrentShop] = useState(undefined)
 
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -9,9 +10,11 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
+        const sendingData = { ...formData, "id": currentUser.id }
+        // setFormData({ ...formData, "id": currentUser.id })
         fetch("http://localhost:5000/registershop", {
             method: 'POST',
-            body: JSON.stringify(formData),
+            body: JSON.stringify(sendingData),
             headers: {
                 "Content-Type": "application/json"
             }
@@ -19,11 +22,13 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setCurrentUser(data)
+                setCurrentShop(data)
+                
             })
     }
     return (<div>
         <h3>Welcome {currentUser.username}, Let's get your coffeeshop set up!</h3>
+        {currentShop && <div>Welcome to {currentShop[0].name}</div>}
         <div className="registerForm">
             <form className="registerForm1" onSubmit={handleSubmit}>
                 <section className="section">
@@ -36,24 +41,14 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                         </div>
 
                         <div className="field">
-                            <label className="label">Email</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Enter Email" name="email" id="email" onChange={handleChange} required />
-                                <span className="icon is-small is-left">
-                                    <i className="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div className="field">
                             <label className="label">Address</label>
                             <div className="control has-icons-left has-icons-right">
                                 <input className="input" type="text" placeholder="Address" name="address" id="address" onChange={handleChange} required />
                             </div>
                         </div>
 
-                        <div class="field">
-                            <div class="control">
+                        <div className="field">
+                            <div className="control">
                             <label className="label">State</label>
                             <select className="select is-success">
                                 <option value="AL">Alabama</option>
@@ -119,19 +114,18 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                             </div>
                         </div>
 
-                        <div class="field">
-                            <label class="label">Tell us about your Coffee Shop </label>
+                        <div className="field">
+                            <label className="label">Tell us about your Coffee Shop </label>
                             <h3>What makes it special? What is your favorite nook? Your favorite drink?  </h3>
-                            <div class="control">
-                                <textarea class="textarea" type="text" id="about" name="about" placeholder="☕"></textarea>
+                            <div className="control">
+                                <textarea className="textarea" type="text" id="about" name="about" placeholder="☕"></textarea>
                             </div>
                         </div>
 
-                        <image></image>
 
                         <div className="field is-grouped">
 
-                            <button className="button" type="submit" id="register-button">Submit</button>
+                            <button className="button" type="submit" id="register-button" onSubmit={handleSubmit}>Submit</button>
 
 
                             <button className="button" type="reset" id="cancel-button">Cancel</button>
