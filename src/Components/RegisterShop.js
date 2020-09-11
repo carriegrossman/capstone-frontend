@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 
-function RegisterShop({setCurrentUser}) {
+const RegisterShop = ({ currentUser, setCurrentUser }) => {
     const [formData, setFormData] = useState({})
 
     const handleChange = (evt) => {
@@ -10,7 +10,7 @@ function RegisterShop({setCurrentUser}) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        fetch("http://localhost:5000/register", {
+        fetch("http://localhost:5000/registershop", {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
@@ -23,19 +23,16 @@ function RegisterShop({setCurrentUser}) {
                 setCurrentUser(data)
             })
     }
-    return (
+    return (<div>
+        <h3>Welcome {currentUser.username}, Let's get your coffeeshop set up!</h3>
         <div className="registerForm">
             <form className="registerForm1" onSubmit={handleSubmit}>
                 <section className="section">
                     <div className="container">
-                        <h1 className="title">Sign up</h1>
                         <div className="field">
-                            <label className="label">Username</label>
+                            <label className="label">Coffee Shop Name</label>
                             <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Enter Username" name="username" id="username" onChange={handleChange} required />
-                                <span className="icon is-small is-left">
-                                    <i className="fas fa-user"></i>
-                                </span>
+                                <input className="input" type="text" placeholder="Enter Name" name="name" id="name" onChange={handleChange} required />
                             </div>
                         </div>
 
@@ -50,14 +47,71 @@ function RegisterShop({setCurrentUser}) {
                         </div>
 
                         <div className="field">
-                            <label className="label">Password</label>
+                            <label className="label">Address</label>
                             <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="password" placeholder="Enter Password" name="password" id="password" onChange={handleChange} required />
-                                <span className="icon is-small is-left">
-                                    <i className="fas fa-lock"></i>
-                                </span>
+                                <input className="input" type="text" placeholder="Address" name="address" id="address" onChange={handleChange} required />
                             </div>
                         </div>
+
+                        <div class="field">
+                            <div class="control">
+                            <label className="label">State</label>
+                            <select className="select is-success">
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                        </div>
+
 
                         <div className="field is-small">
                             <label className="label">Zip Code</label>
@@ -66,7 +120,15 @@ function RegisterShop({setCurrentUser}) {
                             </div>
                         </div>
 
+                        <div class="field">
+                            <label class="label">Tell us about your Coffee Shop </label>
+                            <h3>What makes it special? What is your favorite nook? Your favorite drink?  </h3>
+                            <div class="control">
+                                <textarea class="textarea" type="text" id="about" name="about" placeholder="☕"></textarea>
+                            </div>
+                        </div>
 
+                        <image></image>
 
                         <div className="field is-grouped">
 
@@ -82,8 +144,10 @@ function RegisterShop({setCurrentUser}) {
             </form>
 
         </div>
-    );
+
+    </div>)
+
+
 }
 
 export default RegisterShop
-
