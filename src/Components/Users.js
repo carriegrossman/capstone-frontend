@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
-const Users = ({currentShop}) => {
+const Users = (props) => {
     const [users, setUsers] = useState(undefined)
-    const [stamps, setStamps] = useState(undefined)
+    const [visits, setVisits] = useState({})
 
-    const handleButton = () => {
+    useEffect (() => {
         fetch("http://localhost:5000/findusers", {
             method: "GET",
             headers: {
@@ -16,11 +16,11 @@ const Users = ({currentShop}) => {
                 setUsers(data);
             });
 
-    }
+    }, [])
 
     const handleStamp = (user_id) => {
         const receipt = {
-            "coffeeshop_id": "COMEBACKto_this", 
+            "coffeeshop_id": props.match.params.id, 
             "visitor_id": user_id, 
         }
         fetch("http://localhost:5000/stamp", {
@@ -32,25 +32,24 @@ const Users = ({currentShop}) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                setCurrentShop(data)
-                
+                setVisits({...visits, [user_id] : data}) 
             })
     }
     
 
-
     return (
 
         <div>
-            <button className="button is-warning" onClick={handleButton}>User in my Area</button>
+            <h2 className="title">Users</h2>
             <div className="container"> 
                 {users && users.map(user => {
+                    let id = user.id
                     return (
                         <div className="card" key={user.id}>
                             <div>{user.username}</div>
                             <div>{user.zipcode}</div>
-                            <button onClick={handleStamp(user.id)}>Stamp</button>
+                            <button onClick={()=> handleStamp(user.id)}>Stamp</button>
+                            {visits && visits[id] && <div>{visits[id].stamps} Stamps</div>}
                         </div >
                     )
                 })}
