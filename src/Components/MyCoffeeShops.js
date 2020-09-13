@@ -1,15 +1,12 @@
-import React, { useState } from "react"
-import {Link, Redirect} from "react-router-dom";
+import React, { useState, useEffect } from "react"
+import {Link} from "react-router-dom";
 
 
 const MyCoffeeShops = ({currentUser, setCurrentShop}) => {
     const [myShops, setMyShops] = useState(undefined)
 
-    const handleClick = (id) => {
-        setCurrentShop(id)
-        return (<Redirect to="/allusers" />)
-    }
-    const handleButton = () => {
+    useEffect (()=>{
+
         fetch("http://localhost:5000/myshops", {
             method: 'POST',
             body: JSON.stringify(currentUser),
@@ -21,11 +18,12 @@ const MyCoffeeShops = ({currentUser, setCurrentShop}) => {
             .then((data) => {
                 setMyShops(data);
             });
+    }, [currentUser])
+        
 
-    }
     return (
         <div>
-            <button className="button is-warning" onClick={handleButton}>MY SHOPS</button>
+           <h2 className="title">My CoffeeShops</h2>
             <div className="container">
                 {myShops && myShops.map(shop => {
                     return (
@@ -33,7 +31,8 @@ const MyCoffeeShops = ({currentUser, setCurrentShop}) => {
                             <div>{shop.name}</div>
                             <div>{shop.address}</div>
                             <div>{shop.state}</div>
-                            <Link to="allusers" onClick={handleClick(shop.id)} className = "button is-warning">Find User to Stamp</Link>
+                            <Link to={`/${shop.id}/users`} onClick={()=>{setCurrentShop(shop.id)}} className = "button is-warning">Find User to Stamp</Link>
+                            
                         </div >
                     )
                 })}

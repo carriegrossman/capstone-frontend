@@ -11,7 +11,6 @@ import {
 import './App.css';
 import Register from "./Components/Register"
 import Login from "./Components/Login"
-import Passport from "./Components/Passport"
 import Verification from "./Components/Verification"
 import RegisterOwner from "./Components/RegisterOwner"
 import Search from "./Components/Search"
@@ -19,6 +18,9 @@ import CoffeeShop from "./Components/CoffeeShop"
 import RegisterShop from "./Components/RegisterShop"
 import Users from "./Components/Users"
 import MyCoffeeShops from "./Components/MyCoffeeShops"
+import MyVisits from "./Components/MyVisits"
+import MyRewards from "./Components/MyRewards"
+import ProtectedRoute from "./Components/ProtectedRoute";
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -34,25 +36,46 @@ function App() {
     fetch("/currentUser")
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         if (data.loggedin === "true") setCurrentUser(data.user)
       })
   }, [])
 
-
+  const Protected = () => <h3>Protected</h3>
+  console.log(currentUser)
 
   return (
     <Router>
       {/* {currentUser && <Redirect to="/userhome" />} */}
       <nav className="navbar">
         <div className="navbar-end">
+          {!currentUser &&
+          <React.Fragment>
           <Link className="navbar-item" to="/login">Login</Link>
           <Link className="navbar-item" to="/register">Register</Link>
           <Link className="navbar-item" to="/about">About</Link>
-          <Link className="navbar-item" to="/userhome">Homepage</Link>
-          <Link className="navbar-item" to="/passport">Coffee Passport</Link>
+          </React.Fragment>
+          }
+
+          {currentUser  &&
+          <React.Fragment>
+          <Link className="navbar-item" to="/about">About</Link>
           <Link className="navbar-item" to="/search">Search</Link>
-          <button className="button" onClick={logOut}>Log Out</button>
+          <Link className="navbar-item" to="/myrewards">My Rewards</Link>
+          <Link className="navbar-item" to="/about">My Visits</Link>
+          </React.Fragment>
+          }
+
+          {currentUser  && currentUser.owner &&
+          <React.Fragment>
+          <Link className="navbar-item" to="/mycoffeeshops">My CoffeeShops</Link>
+          </React.Fragment>
+          }
+
+        {currentUser  &&
+          <React.Fragment>
+          <button className="logout navbar-item" onClick={logOut}>Log Out</button>
+          </React.Fragment>
+          }   
         </div>
       </nav>
 
@@ -62,15 +85,7 @@ function App() {
           {currentUser && currentUser.owner && <Redirect to="/userhome" />}
         </Route>
         <Route path="/register">
-          <div>
             <Register setCurrentUser={setCurrentUser} />
-            {/* {currentUser &&
-              <React.Fragment>
-                {currentUser.owner && <Redirect to="/coffeeshop" />}
-                {!currentUser.owner && <Redirect to="/userhome" />}
-              </React.Fragment>
-            } */}
-          </div>
         </Route>
         <Route path="/verifyshop">
           <Verification />
@@ -79,27 +94,33 @@ function App() {
           <RegisterOwner setCurrentUser={setCurrentUser} />
         </Route>
         <Route path="/registershop">
-          <RegisterShop setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+          <RegisterShop setCurrentUser={setCurrentUser} currentUser={currentUser} />
         </Route>
-        <Route path="/about">
-        </Route>
-        <Route path="/coffeeshop/:id" component={CoffeeShop}>
-        </Route>
+        <ProtectedRoute path="/about"/>
+        <Route path="/coffeeshop/:id" component={CoffeeShop}/>
         <Route path="/userhome">
-          {currentUser && currentUser.owner && <RegisterShop currentUser={currentUser}/>}
+          {currentUser && currentUser.owner && <RegisterShop currentUser={currentUser} />}
         </Route>
         <Route path="/passport">
           {currentUser && <div>Welcome {currentUser.username}</div>}
-          <Passport />
         </Route>
         <Route path="/search">
           <Search currentSearch={currentSearch} setCurrentSearch={setCurrentSearch} />
         </Route>
         <Route path="/allusers">
-          <Users currentShop = {currentShop} setCurrentShop={setCurrentShop}/>
+          <Users currentShop={currentShop} setCurrentShop={setCurrentShop} />
         </Route>
+        <Route path="/:id/users" component={Users}/>
         <Route path="/mycoffeeshops">
-          <MyCoffeeShops currentUser ={currentUser} setCurrentShop={setCurrentShop}/>
+          <MyCoffeeShops currentUser={currentUser} currentShop={currentShop} setCurrentShop={setCurrentShop} />
+        </Route>
+        <Route path="/myvisits">
+          <MyVisits currentUser={currentUser} />
+        </Route>
+        <ProtectedRoute path='/protected' currentUser={currentUser} component={Protected} />
+
+        <Route path="/myrewards">
+          <MyRewards currentUser={currentUser} currentShop={currentShop} />
         </Route>
       </Switch>
     </Router>

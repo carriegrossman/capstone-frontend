@@ -1,21 +1,19 @@
-import React, { useState } from "react"
-import {
-    Link, Redirect
-} from "react-router-dom";
+import React from "react"
+import {Link} from "react-router-dom";
 
 const Verification = () => {
-    const [verificationCode, setVerificationCode] = useState(undefined)
+    // const [verificationCode, setVerificationCode] = useState(undefined)
 
-    // const handleChange = (evt) => {
-    //     setVerificationCode(evt.target.value)
-    // }
+    // // const handleChange = (evt) => {
+    // //     setVerificationCode(evt.target.value)
+    // // }
 
-    // const handleSubmit = (evt) => {
-    //     if (verificationCode === "coffeerocks") {
-    //         return (<Redirect to="/registerowner" />)
-    //     }
+    // // const handleSubmit = (evt) => {
+    // //     if (verificationCode === "coffeerocks") {
+    // //         return (<Redirect to="/registerowner" />)
+    // //     }
 
-    // }
+    // // }
 
     return (
         <React.Fragment>
