@@ -119,6 +119,7 @@ td {
   border: 1px solid black;
 }
 
+<<<<<<< HEAD
 /* passport css starts here */
 
 .passportContainer {
@@ -154,3 +155,8 @@ h2 {
 .colorline {
   margin-top: 1000px;
 }
+=======
+.logout{
+  background-color: beige;
+}
+>>>>>>> origin/master

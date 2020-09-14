@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
@@ -14,6 +15,24 @@ const Verification = () => {
   //     }
 
   // }
+=======
+import React from "react"
+import {Link} from "react-router-dom";
+
+const Verification = () => {
+    // const [verificationCode, setVerificationCode] = useState(undefined)
+
+    // // const handleChange = (evt) => {
+    // //     setVerificationCode(evt.target.value)
+    // // }
+
+    // // const handleSubmit = (evt) => {
+    // //     if (verificationCode === "coffeerocks") {
+    // //         return (<Redirect to="/registerowner" />)
+    // //     }
+
+    // // }
+>>>>>>> origin/master
 
   return (
     <React.Fragment>

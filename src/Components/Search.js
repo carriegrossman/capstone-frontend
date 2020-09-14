@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect
-  } from "react-router-dom";
-  
+import { Link } from "react-router-dom";
 
-const Search = ({ setCurrentSearch, currentSearch }) => {
-
+const Search = ({ currentUser }) => {
+    const [currentSearch, setCurrentSearch] = useState(undefined);
     const handleButton = () => {
         fetch("http://localhost:5000/find", {
             method: "GET",
@@ -21,26 +14,33 @@ const Search = ({ setCurrentSearch, currentSearch }) => {
             .then((data) => {
                 setCurrentSearch(data);
             });
-
-    }
+    };
 
     return (
-
         <div>
-            <button className="button is-warning" onClick={handleButton}>Shops in my Area</button>
+            <button className="button is-warning" onClick={handleButton}>
+                Shops in my Area
+      </button>
             <div className="container">
-                {currentSearch && currentSearch.map(shop => {
-                    return (
-                        <div className="card" key={shop.id}>
-                            <div>{shop.name}</div>
-                            <div>{shop.address}</div>
-                            <div>{shop.state}</div>
-                            <Link to={`coffeeshop/${shop.id}`} className = "button is-warning">See Homepage</Link>
-                        </div >
-                    )
-                })}
+                {currentSearch &&
+                    currentSearch.map((shop) => {
+                        return (
+                            <div className="card" key={shop.id}>
+                                <div>{shop.name}</div>
+                                <div>{shop.address}</div>
+                                <div>{shop.state}</div>
+                                <Link
+                                    to={`coffeeshop/${shop.id}`}
+                                    className="button is-warning"
+                                >
+                                    See Homepage
+                </Link>
+                            </div>
+                        );
+                    })}
             </div>
-        </div>)
-}
+        </div>
+    );
+};
 
 export default Search;
