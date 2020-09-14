@@ -81,3 +81,7 @@ table, th, td {
 .logout{
   background-color: beige;
 }
+
+.is-amber{
+  background: #bc6c25;
+}
