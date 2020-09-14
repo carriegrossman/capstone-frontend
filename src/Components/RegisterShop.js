@@ -11,7 +11,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
     const handleSubmit = (evt) => {
         evt.preventDefault()
         const sendingData = { ...formData, "id": currentUser.id }
-        // setFormData({ ...formData, "id": currentUser.id })
+        console.log(sendingData)
         fetch("http://localhost:5000/registershop", {
             method: 'POST',
             body: JSON.stringify(sendingData),
@@ -47,6 +47,12 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                             </div>
                         </div>
 
+                        <div className="field">
+                            <label className="label">City</label>
+                            <div className="control has-icons-left has-icons-right">
+                                <input className="input" type="text" placeholder="City" name="city" id="city" onChange={handleChange} required />
+                            </div>
+                        </div>
                         <div className="field">
                             <div className="control">
                             <label className="label">State</label>
@@ -118,7 +124,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                             <label className="label">Tell us about your Coffee Shop </label>
                             <h3>What makes it special? What is your favorite nook? Your favorite drink?  </h3>
                             <div className="control">
-                                <textarea className="textarea" type="text" id="about" name="about" placeholder="☕"></textarea>
+                                <textarea className="textarea" type="text" id="about" name="about" placeholder="☕"  onChange={handleChange}required></textarea>
                             </div>
                         </div>
 
