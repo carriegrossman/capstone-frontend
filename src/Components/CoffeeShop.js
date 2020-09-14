@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 
 const CoffeeShop = (props) => {
     const [coffeeShopData, setCoffeeShopData] = useState(null)
-    
+    console.log(props)
     useEffect (()=>{
         fetch (`/coffeeshop/${props.match.params.id}`)
         .then (res => res.json())

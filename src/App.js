@@ -24,7 +24,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
-  const [currentSearch, setCurrentSearch] = useState(undefined)
+  // const [currentSearch, setCurrentSearch] = useState(undefined)
   const [currentShop, setCurrentShop] = useState(undefined)
 
 
@@ -32,16 +32,14 @@ function App() {
     setCurrentUser(undefined)
   }
   //looks to see if current user cookie is still valid
-  useEffect(() => {
-    fetch("/currentUser")
-      .then(res => res.json())
-      .then(data => {
-        if (data.loggedin === "true") setCurrentUser(data.user)
-      })
-  }, [])
+  // useEffect(() => {
+  //   fetch("/currentUser")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data.loggedin === "true") setCurrentUser(data.user)
+  //     })
+  // }, [])
 
-  const Protected = () => <h3>Protected</h3>
-  console.log(currentUser)
 
   return (
     <Router>
@@ -61,7 +59,7 @@ function App() {
           <Link className="navbar-item" to="/about">About</Link>
           <Link className="navbar-item" to="/search">Search</Link>
           <Link className="navbar-item" to="/myrewards">My Rewards</Link>
-          <Link className="navbar-item" to="/about">My Visits</Link>
+          <Link className="navbar-item" to="/myvisits">My Visits</Link>
           </React.Fragment>
           }
 
@@ -82,10 +80,14 @@ function App() {
       <Switch>
         <Route path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
-          {currentUser && currentUser.owner && <Redirect to="/userhome" />}
+          {currentUser && !currentUser.owner && <Redirect to="/search" />}
+          {currentUser && currentUser.owner && <Redirect to="/mycoffeeshops" />}
         </Route>
+        <Route path="/about"/>
         <Route path="/register">
             <Register setCurrentUser={setCurrentUser} />
+            {currentUser && !currentUser.owner && <Redirect to="/search" />}
+            {currentUser && currentUser.owner && <Redirect to="/mycoffeeshops" />}
         </Route>
         <Route path="/verifyshop">
           <Verification />
@@ -96,32 +98,14 @@ function App() {
         <Route path="/registershop">
           <RegisterShop setCurrentUser={setCurrentUser} currentUser={currentUser} />
         </Route>
-        <ProtectedRoute path="/about"/>
-        <Route path="/coffeeshop/:id" component={CoffeeShop}/>
-        <Route path="/userhome">
-          {currentUser && currentUser.owner && <RegisterShop currentUser={currentUser} />}
-        </Route>
-        <Route path="/passport">
-          {currentUser && <div>Welcome {currentUser.username}</div>}
-        </Route>
-        <Route path="/search">
-          <Search currentSearch={currentSearch} setCurrentSearch={setCurrentSearch} />
-        </Route>
-        <Route path="/allusers">
-          <Users currentShop={currentShop} setCurrentShop={setCurrentShop} />
-        </Route>
-        <Route path="/:id/users" component={Users}/>
-        <Route path="/mycoffeeshops">
-          <MyCoffeeShops currentUser={currentUser} currentShop={currentShop} setCurrentShop={setCurrentShop} />
-        </Route>
-        <Route path="/myvisits">
-          <MyVisits currentUser={currentUser} />
-        </Route>
-        <ProtectedRoute path='/protected' currentUser={currentUser} component={Protected} />
 
-        <Route path="/myrewards">
-          <MyRewards currentUser={currentUser} currentShop={currentShop} />
-        </Route>
+        <ProtectedRoute path="/coffeeshop/:id" currentUser={currentUser} component={CoffeeShop}/>
+        <ProtectedRoute path="/search" currentUser={currentUser} component={Search}/>
+        <ProtectedRoute path="/:id/users" currentUser={currentUser} component={Users}/>
+        <ProtectedRoute path="/mycoffeeshops" currentUser={currentUser} currentShop={currentShop} setCurrentShop={setCurrentShop} component={MyCoffeeShops}/>
+        <ProtectedRoute path="/myvisits" currentUser={currentUser} component={MyVisits}/>
+        <ProtectedRoute path="/myrewards" currentUser={currentUser} currentShop={currentShop} component={MyRewards}/>
+
       </Switch>
     </Router>
   );
