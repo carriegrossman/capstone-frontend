@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import Coloredline from "./Dumbline";
 
 const Passport = () => {
   return (
-    <div className="container">
+    <div className="passportContainer">
+      <h2 className="passporth3">CoffeePassport</h2>
+      <Coloredline color="black" className="colorline"></Coloredline>
       <div className="coffeeshop">
         {/* change coffee image here  */}
         <img
