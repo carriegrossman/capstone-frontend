@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 const Search = ({ currentUser }) => {
     const [currentSearch, setCurrentSearch] = useState(undefined);
-    const handleButton = () => {
+    
+    useEffect (() => {
         fetch("http://localhost:5000/find", {
             method: "GET",
             headers: {
@@ -14,13 +15,11 @@ const Search = ({ currentUser }) => {
             .then((data) => {
                 setCurrentSearch(data);
             });
-    };
+    }, [])
 
     return (
         <div>
-            <button className="button is-warning" onClick={handleButton}>
-                Shops in my Area
-      </button>
+            <h2 className = "title">Shops in my Area</h2>
             <div className="container">
                 {currentSearch &&
                     currentSearch.map((shop) => {

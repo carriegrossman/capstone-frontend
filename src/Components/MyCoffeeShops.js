@@ -31,7 +31,7 @@ const MyCoffeeShops = ({currentUser, setCurrentShop}) => {
                             <div>{shop.name}</div>
                             <div>{shop.address}</div>
                             <div>{shop.state}</div>
-                            <Link to={`/${shop.id}/users`} onClick={()=>{setCurrentShop(shop.id)}} className = "button is-warning">Find User to Stamp</Link>
+                            <Link to={`/${shop.id}/users`} onClick={()=>{setCurrentShop(shop.id)}} className = "button is-amber">Find User to Stamp</Link>
                             
                         </div >
                     )

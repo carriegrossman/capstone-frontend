@@ -1,41 +1,55 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react";
 
-const MyVisits = ({currentUser}) => {
-    const [yourVisits, setYourVisits] = useState(undefined)
+const MyVisits = ({ currentUser }) => {
+    const [myVisits, setMyVisits] = useState(undefined);
 
-    const handleStamp = (user_id) => {
-    
-        let visitor_id = {"id" :currentUser.id}
-        fetch("http://localhost:5000/yourvisits", {
-            method: 'POST',
-            body: JSON.stringify(visitor_id),
-            headers: {
-                "Content-Type": "application/json"
+    useEffect(() => {
+        let fetchshop = async () => {
+            let visitor_id = { id: currentUser.id };
+            let visitfetch = await fetch("http://localhost:5000/yourvisits", {
+                method: "POST",
+                body: JSON.stringify(visitor_id),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            let visitfetchAsJSON = await visitfetch.json();
+
+            for (let i = 0; i < visitfetchAsJSON.length; i++) {
+                let coffeeshopId = { coffeeshop_id: visitfetchAsJSON[i].coffeeshop_id };
+                let shopfetch = await fetch("http://localhost:5000/getshop", {
+                    method: "POST",
+                    body: JSON.stringify(coffeeshopId),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                let shopfetchasJSON = await shopfetch.json();
+                visitfetchAsJSON[i]["store"] = shopfetchasJSON;
             }
-        })
-            .then(res => res.json())
-            .then(data => {
-                setYourVisits(data)
-                
-            })
-    }
-    
+            setMyVisits(visitfetchAsJSON);
+        };
+
+        fetchshop();
+    }, [currentUser]);
 
     return (
-
         <div>
-            <button className="button is-warning" onClick={handleStamp}>Your Visits</button>
-            <div className="container"> 
-                {yourVisits && yourVisits.map(visit => {
-                    return (
-                        <div className="card" key={visit.id}>
-                            {visit.coffeeshop_id}
-                        </div >
-                    )
-                })}
+            <h2 className="title">My Visits</h2>
+            <div className="container">
+                {myVisits &&
+                    myVisits.map((visit) => {
+                        return (
+                            <div className="card" key={visit.id}>
+                                <div>{visit.store.name}</div>
+                                <div>{visit.stamps} Visits</div>
+                            </div>
+                        );
+                    })}
             </div>
-        </div>)
-}
+        </div>
+    );
+};
 
-
-export default MyVisits
+export default MyVisits;
