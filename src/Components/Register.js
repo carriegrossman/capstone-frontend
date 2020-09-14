@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ColoredLine from "./Dumbline";
 
 function Register({ currentUser, setCurrentUser }) {
   const [formData, setFormData] = useState({});
