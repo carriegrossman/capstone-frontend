@@ -64,6 +64,7 @@ function App() {
           <React.Fragment>
           <Link className="navbar-item" to="/about">About</Link>
           <Link className="navbar-item" to="/search">Search</Link>
+          <Link className="navbar-item" to="/imageupload">Upload an Image</Link>
           <Link className="navbar-item" to="/myrewards">My Rewards</Link>
           <Link className="navbar-item" to="/myvisits">My Visits</Link>
           </React.Fragment>
@@ -105,7 +106,7 @@ function App() {
         <Route path="/registershop">
           <RegisterShop setCurrentUser={setCurrentUser} currentUser={currentUser} />
         </Route>
-
+        {/* <ProtectedRoute path="/imageupload" currentUser={currentUser} component={ImageUpload}/> */}
         <ProtectedRoute path="/coffeeshop/:id" currentUser={currentUser} component={CoffeeShop}/>
         <ProtectedRoute path="/search" currentUser={currentUser} component={Search}/>
         <ProtectedRoute path="/:id/users" currentUser={currentUser} component={Users}/>
