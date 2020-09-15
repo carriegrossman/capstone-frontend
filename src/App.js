@@ -77,7 +77,7 @@ function App() {
 
         {currentUser  &&
           <React.Fragment>
-          <button className="logout navbar-item" onClick={logOut}>Log Out</button>
+          <button className="navbar-item" onClick={logOut}>Log Out</button>
           </React.Fragment>
           }   
         </div>

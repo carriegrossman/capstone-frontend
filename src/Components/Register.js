@@ -24,10 +24,11 @@ function Register({ currentUser, setCurrentUser }) {
   };
   return (
     <div className="registerForm">
+      <h1>Sign up</h1>
       <form className="registerForm1" onSubmit={handleSubmit}>
         <section className="section">
           <div className="container">
-            <h1 className="title">Sign up</h1>
+            {/* <h1 className="title">Sign up</h1> */}
             <div className="field">
               <label className="label">Username</label>
               <div className="control">
@@ -40,9 +41,7 @@ function Register({ currentUser, setCurrentUser }) {
                   onChange={handleChange}
                   required
                 />
-                <span className="icon">
-                  <i className="fas fa-user"></i>
-                </span>
+
               </div>
             </div>
 
@@ -99,7 +98,7 @@ function Register({ currentUser, setCurrentUser }) {
 
             <div className="field">
               <button
-                className="registerSubmit"
+                className="button"
                 type="submit"
                 id="register-button"
               >
@@ -107,7 +106,7 @@ function Register({ currentUser, setCurrentUser }) {
               </button>
 
               <button
-                className="registerCancel"
+                className="button"
                 type="reset"
                 id="cancel-button"
               >

@@ -1,4 +1,4 @@
-body {
+html {
   background-color: rgb(254, 249, 239);
 }
 
@@ -15,6 +15,7 @@ body {
 
 .navbar {
   background: #b88d67;
+  margin: auto;
   width: 100%;
   height: 145px;
   display: flex;
@@ -22,9 +23,6 @@ body {
 }
 
 /* CSS for Login starts here */
-.loginForm {
-  background-color: rgb(254, 249, 239);
-}
 
 h1 {
   font-size: 24px;
@@ -35,13 +33,14 @@ h1 {
 }
 
 .loginForm1 {
-  position: absolute;
-  width: 349px;
-  height: 462px;
+  width: 80%;
+  height: 75%;
+  margin: auto;
+  margin-top: 20px;
   background: #e9d5af;
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  left: 500px;
+  /* left: 500px; */
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -49,7 +48,7 @@ h1 {
 }
 
 .loginSubmit {
-  align-self: center;
+  /* align-self: center; */
   width: 114px;
   height: 25px;
   background: #ffffff;
@@ -81,13 +80,15 @@ h1 {
 /* register css starts here */
 
 .registerForm1 {
-  position: absolute;
-  width: 349px;
-  height: 800px;
+  /* position: absolute; */
+  margin: auto;
+  margin-top: 20px;
+  width: 400px;
+  height: 700px;
   background: #e9d5af;
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  left: 500px;
+  /* left: 500px; */
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -170,3 +171,4 @@ h2 {
 .is-amber{
   background: #bc6c25;
 }
+
