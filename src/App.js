@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import logo from "./images/brewsy1.png";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,7 +7,6 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-
 //Components
 import "./App.css";
 import Register from "./Components/Register";
@@ -26,7 +26,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
   // const [currentSearch, setCurrentSearch] = useState(undefined)
   const [currentShop, setCurrentShop] = useState(undefined);
-
   const logOut = () => {
     setCurrentUser(undefined);
   };
@@ -38,11 +37,11 @@ function App() {
   //       if (data.loggedin === "true") setCurrentUser(data.user)
   //     })
   // }, [])
-
   return (
     <Router>
       {/* {currentUser && <Redirect to="/userhome" />} */}
       <nav className="navbar">
+        <img src={logo} alt="brewsy logo" className="logo" />
         <div className="navbar-end">
           {!currentUser && (
             <React.Fragment>
@@ -57,35 +56,44 @@ function App() {
               </Link>
             </React.Fragment>
           )}
-
-          {currentUser  &&
-          <React.Fragment>
-          <Link className="navbar-item" to="/about">About</Link>
-          <Link className="navbar-item" to="/search">Search</Link>
-          <Link className="navbar-item" to="/imageupload">Upload an Image</Link>
-          <Link className="navbar-item" to="/myrewards">My Rewards</Link>
-          <Link className="navbar-item" to="/myvisits">My Visits</Link>
-          </React.Fragment>
-          }
-
+          {currentUser && (
+            <React.Fragment>
+              <Link className="navbar-item" to="/about">
+                About
+              </Link>
+              <Link className="navbar-item" to="/search">
+                Search
+              </Link>
+              <Link className="navbar-item" to="/imageupload">
+                Upload an Image
+              </Link>
+              <Link className="navbar-item" to="/myrewards">
+                My Rewards
+              </Link>
+              <Link className="navbar-item" to="/myvisits">
+                My Visits
+              </Link>
+            </React.Fragment>
+          )}
           {currentUser && currentUser.owner && (
             <React.Fragment>
+              <Link className="navbar-item" to="/registershop">
+                Register Shop
+              </Link>
               <Link className="navbar-item" to="/mycoffeeshops">
                 My CoffeeShops
               </Link>
             </React.Fragment>
           )}
-
           {currentUser && (
             <React.Fragment>
-              <button className="logout navbar-item" onClick={logOut}>
+              <button className="navbar-item" onClick={logOut}>
                 Log Out
               </button>
             </React.Fragment>
           )}
         </div>
       </nav>
-
       <Switch>
         <Route path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -110,16 +118,40 @@ function App() {
             currentUser={currentUser}
           />
         </Route>
-
         {/* <ProtectedRoute path="/imageupload" currentUser={currentUser} component={ImageUpload}/> */}
-        <ProtectedRoute path="/coffeeshop/:id" currentUser={currentUser} component={CoffeeShop}/>
-        <ProtectedRoute path="/search" currentUser={currentUser} component={Search}/>
-        <ProtectedRoute path="/:id/users" currentUser={currentUser} component={Users}/>
-        <ProtectedRoute path="/mycoffeeshops" currentUser={currentUser} currentShop={currentShop} setCurrentShop={setCurrentShop} component={MyCoffeeShops}/>
-        <ProtectedRoute path="/myvisits" currentUser={currentUser} component={MyVisits}/>
-        <ProtectedRoute path="/myrewards" currentUser={currentUser} currentShop={currentShop} component={MyRewards}/>
-
-
+        <ProtectedRoute
+          path="/coffeeshop/:id"
+          currentUser={currentUser}
+          component={CoffeeShop}
+        />
+        <ProtectedRoute
+          path="/search"
+          currentUser={currentUser}
+          component={Search}
+        />
+        <ProtectedRoute
+          path="/:id/users"
+          currentUser={currentUser}
+          component={Users}
+        />
+        <ProtectedRoute
+          path="/mycoffeeshops"
+          currentUser={currentUser}
+          currentShop={currentShop}
+          setCurrentShop={setCurrentShop}
+          component={MyCoffeeShops}
+        />
+        <ProtectedRoute
+          path="/myvisits"
+          currentUser={currentUser}
+          component={MyVisits}
+        />
+        <ProtectedRoute
+          path="/myrewards"
+          currentUser={currentUser}
+          currentShop={currentShop}
+          component={MyRewards}
+        />
       </Switch>
     </Router>
   );
