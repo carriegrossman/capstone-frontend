@@ -58,22 +58,15 @@ function App() {
             </React.Fragment>
           )}
 
-          {currentUser && (
-            <React.Fragment>
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/search">
-                Search
-              </Link>
-              <Link className="navbar-item" to="/myrewards">
-                My Rewards
-              </Link>
-              <Link className="navbar-item" to="/myvisits">
-                My Visits
-              </Link>
-            </React.Fragment>
-          )}
+          {currentUser  &&
+          <React.Fragment>
+          <Link className="navbar-item" to="/about">About</Link>
+          <Link className="navbar-item" to="/search">Search</Link>
+          <Link className="navbar-item" to="/imageupload">Upload an Image</Link>
+          <Link className="navbar-item" to="/myrewards">My Rewards</Link>
+          <Link className="navbar-item" to="/myvisits">My Visits</Link>
+          </React.Fragment>
+          }
 
           {currentUser && currentUser.owner && (
             <React.Fragment>
@@ -118,39 +111,15 @@ function App() {
           />
         </Route>
 
-        <ProtectedRoute
-          path="/coffeeshop/:id"
-          currentUser={currentUser}
-          component={CoffeeShop}
-        />
-        <ProtectedRoute
-          path="/search"
-          currentUser={currentUser}
-          component={Search}
-        />
-        <ProtectedRoute
-          path="/:id/users"
-          currentUser={currentUser}
-          component={Users}
-        />
-        <ProtectedRoute
-          path="/mycoffeeshops"
-          currentUser={currentUser}
-          currentShop={currentShop}
-          setCurrentShop={setCurrentShop}
-          component={MyCoffeeShops}
-        />
-        <ProtectedRoute
-          path="/myvisits"
-          currentUser={currentUser}
-          component={MyVisits}
-        />
-        <ProtectedRoute
-          path="/myrewards"
-          currentUser={currentUser}
-          currentShop={currentShop}
-          component={MyRewards}
-        />
+        {/* <ProtectedRoute path="/imageupload" currentUser={currentUser} component={ImageUpload}/> */}
+        <ProtectedRoute path="/coffeeshop/:id" currentUser={currentUser} component={CoffeeShop}/>
+        <ProtectedRoute path="/search" currentUser={currentUser} component={Search}/>
+        <ProtectedRoute path="/:id/users" currentUser={currentUser} component={Users}/>
+        <ProtectedRoute path="/mycoffeeshops" currentUser={currentUser} currentShop={currentShop} setCurrentShop={setCurrentShop} component={MyCoffeeShops}/>
+        <ProtectedRoute path="/myvisits" currentUser={currentUser} component={MyVisits}/>
+        <ProtectedRoute path="/myrewards" currentUser={currentUser} currentShop={currentShop} component={MyRewards}/>
+
+
       </Switch>
     </Router>
   );

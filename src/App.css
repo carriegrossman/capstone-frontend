@@ -17,7 +17,7 @@ html {
   background: #b88d67;
   margin: auto;
   width: 100%;
-  height: 145px;
+  height: auto;
   display: flex;
   align-items: center;
 }

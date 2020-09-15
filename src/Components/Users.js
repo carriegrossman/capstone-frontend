@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 
 const Users = (props) => {
     const [users, setUsers] = useState(undefined)
-    const [visits, setVisits] = useState({})
 
     useEffect(() => {
 
@@ -19,15 +18,15 @@ const Users = (props) => {
             for (let i = 0; i < fetchUsersAsJSON.length; i++) {
                 let fetchStamp = await fetch("http://localhost:5000/getstamps", {
                     method: 'POST',
-                    body: JSON.stringify({"visitor_id": fetchUsersAsJSON[i].id}),
+                    body: JSON.stringify({"visitor_id": fetchUsersAsJSON[i].id, "coffeeshop_id": Number(props.match.params.id)}),
                     headers: {
                         "Content-Type": "application/json"
                     }
                 })
 
                 let fetchStampAsJSON = await fetchStamp.json()
-
                 fetchUsersAsJSON[i]["visits"] = fetchStampAsJSON
+                
             }
             setUsers(fetchUsersAsJSON)
 
@@ -35,7 +34,7 @@ const Users = (props) => {
 
         fetchUsersAndVisits()
 
-    }, [props.match.params.id, visits])
+    }, [props, props.match.params.id])
 
     const handleStamp = async (user_id) => {
         const receipt = {
@@ -62,7 +61,6 @@ const Users = (props) => {
     }
 
     return (
-
         <div>
             <h2 className="title">Users</h2>
             <div className="container">
