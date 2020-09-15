@@ -31,18 +31,15 @@ function Register({ currentUser, setCurrentUser }) {
             {/* <h1 className="title">Sign up</h1> */}
             <div className="field">
               <label className="label">Username</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Enter Username"
-                  name="username"
-                  id="username"
-                  onChange={handleChange}
-                  required
-                />
-
-              </div>
+              <input
+                className="input"
+                type="text"
+                placeholder="Enter Username"
+                name="username"
+                id="username"
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="field">
@@ -62,54 +59,38 @@ function Register({ currentUser, setCurrentUser }) {
                 </span>
               </div>
             </div>
-
             <div className="field">
               <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  placeholder="Enter Password"
-                  name="password"
-                  id="password"
-                  onChange={handleChange}
-                  required
-                />
-                <span className="icon">
-                  <i className="fas fa-lock"></i>
-                </span>
-              </div>
+              <input
+                className="input"
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                id="password"
+                onChange={handleChange}
+                required
+              />
+              <span className="icon">
+                <i className="fas fa-lock"></i>
+              </span>
             </div>
-
             <div className="field">
               <label className="label">Zip Code</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Zip Code"
-                  name="zipcode"
-                  id="zipcode"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <input
+                className="input"
+                type="text"
+                placeholder="Zip Code"
+                name="zipcode"
+                id="zipcode"
+                onChange={handleChange}
+                required
+              />
             </div>
-
             <div className="field">
-              <button
-                className="button"
-                type="submit"
-                id="register-button"
-              >
+              <button className="button" type="submit" id="register-button">
                 Submit
               </button>
-
-              <button
-                className="button"
-                type="reset"
-                id="cancel-button"
-              >
+              <button className="button" type="reset" id="cancel-button">
                 Cancel
               </button>
               <div>
