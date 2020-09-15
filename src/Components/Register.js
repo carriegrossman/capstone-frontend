@@ -40,7 +40,6 @@ function Register({ currentUser, setCurrentUser }) {
                   onChange={handleChange}
                   required
                 />
-
               </div>
             </div>
 
