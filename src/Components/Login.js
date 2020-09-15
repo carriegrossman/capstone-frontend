@@ -42,9 +42,6 @@ function Login({ currentUser, setCurrentUser }) {
               onChange={handleChange}
               required
             />
-            <span className="icon is-small is-left">
-              <i className="fas fa-user"></i>
-            </span>
           </div>
           <div className="field">
             <label className="label">Password</label>
@@ -58,15 +55,12 @@ function Login({ currentUser, setCurrentUser }) {
                 onChange={handleChange}
                 required
               />
-              <span className="icon is-small is-left">
-                <i className="fas fa-lock"></i>
-              </span>
             </div>
           </div>
           <div className="field is-grouped">
             <div className="control">
               <button
-                className="loginSubmit"
+                className="button"
                 type="submit"
                 id="register-button"
               >
@@ -74,7 +68,7 @@ function Login({ currentUser, setCurrentUser }) {
               </button>
             </div>
             <div className="control">
-              <button className="loginCancel" type="reset" id="cancel-button">
+              <button className="button" type="reset" id="cancel-button">
                 Cancel
               </button>
             </div>

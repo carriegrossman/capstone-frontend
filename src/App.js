@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import logo from './images/brewsy1.png';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,11 +42,15 @@ function App() {
   //     })
   // }, [])
 
+ 
+
+
 
   return (
     <Router>
       {/* {currentUser && <Redirect to="/userhome" />} */}
       <nav className="navbar">
+      <img src={logo} alt="brewsy logo" className="logo"/>
         <div className="navbar-end">
           {!currentUser &&
           <React.Fragment>
@@ -72,7 +78,7 @@ function App() {
 
         {currentUser  &&
           <React.Fragment>
-          <button className="logout navbar-item" onClick={logOut}>Log Out</button>
+          <button className="navbar-item" onClick={logOut}>Log Out</button>
           </React.Fragment>
           }   
         </div>
