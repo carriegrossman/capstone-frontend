@@ -29,34 +29,59 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
     return (<div>
         <h3>Welcome {currentUser.username}, Let's get your coffeeshop set up!</h3>
         {currentShop && <div>Welcome to {currentShop[0].name}</div>}
+
         <div className="registerForm">
-            <form className="registerForm1" onSubmit={handleSubmit}>
-                <section className="section">
-                    <div className="container">
-                        <div className="field">
-                            <label className="label">Coffee Shop Name</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Enter Name" name="name" id="name" onChange={handleChange} required />
+        <form className="registerForm1" onSubmit={handleSubmit}>
+            <h1>Set Up Your Coffee Shop</h1>
+
+            <section className="section">
+                <label className="label">Coffee Shop Name</label>
+                    <div className="control">
+                        <input 
+                        className="input" 
+                        type="text" 
+                        placeholder="Enter Name" 
+                        name="name" 
+                        id="name" 
+                        onChange={handleChange} 
+                        required />
+                </div>
+
+                <div className="field">
+                    <label className="label">Address</label>
+                        <div className="control">
+                            <input
+                            className="input" 
+                            type="text" 
+                            placeholder="Address" 
+                            name="address" 
+                            id="address" 
+                            onChange={handleChange} 
+                            required
+                            />
+                    </div>
+                </div>
+
+                    <div className="field">
+                        <label className="label">City</label>
+                            <div className="control">
+                                <input 
+                                className="input" 
+                                type="text" 
+                                placeholder="City"
+                                name="city" 
+                                id="city" 
+                                onChange={handleChange} 
+                                required />
                             </div>
                         </div>
 
-                        <div className="field">
-                            <label className="label">Address</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Address" name="address" id="address" onChange={handleChange} required />
-                            </div>
-                        </div>
 
-                        <div className="field">
-                            <label className="label">City</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="City" name="city" id="city" onChange={handleChange} required />
-                            </div>
-                        </div>
                         <div className="field">
                             <div className="control">
                             <label className="label">State</label>
                             <select className="select is-success">
+                                <option value="GA">Georgia</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
                                 <option value="AZ">Arizona</option>
@@ -112,11 +137,18 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                         </div>
                         </div>
 
-
-                        <div className="field is-small">
+                        <div className="field">
                             <label className="label">Zip Code</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Zip Code" name="zipcode" id="zipcode" onChange={handleChange} required />
+                                <div className="control">
+                                    <input
+                                    className="input"
+                                    type="text"
+                                    placeholder="Zip Code"
+                                    name="zipcode"
+                                    id="zipcode"
+                                    onChange={handleChange}
+                                    required
+                                    />
                             </div>
                         </div>
 
@@ -128,22 +160,25 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                             </div>
                         </div>
 
-
                         <div className="field is-grouped">
-
-                            <button className="button" type="submit" id="register-button" onSubmit={handleSubmit}>Submit</button>
-
-
-                            <button className="button" type="reset" id="cancel-button">Cancel</button>
-
+                            <div className="control">
+                                <button
+                                className="button"
+                                type="submit"
+                                id="register-button"
+                                >
+                                Submit
+                                </button>
+                            </div>
+                        <div className="control">
+                            <button className="button" type="reset" id="cancel-button">
+                            Cancel
+                            </button>
                         </div>
                     </div>
-
                 </section>
             </form>
-
         </div>
-
     </div>)
 
 

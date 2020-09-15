@@ -23,75 +23,87 @@ function Register({ currentUser, setCurrentUser }) {
       });
   };
   return (
-    <div className="registerForm">
-      <form className="registerForm1" onSubmit={handleSubmit}>
-        <section className="section">
-          <div className="container">
-            <h1 className="title">Sign up</h1>
-            <div className="field">
-              <label className="label">Username</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Enter Username"
-                  name="username"
-                  id="username"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
+<div className="registerForm">
+    <form className="registerForm1" onSubmit={handleSubmit}>
+      <h1>Sign Up</h1>
 
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Enter Email"
-                  name="email"
-                  id="email"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  placeholder="Enter Password"
-                  name="password"
-                  id="password"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+      <section className="section">
+        <label className="label">Username</label>
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            placeholder="Enter Username"
+            name="username"
+            id="username"
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-            </div>
-            <div className="field">
+        <div className="field">
+          <label className="label">Email</label>
+          <div className="control">
+            <input
+              className="input"
+              type="email"
+              placeholder="Enter Email"
+              name="email"
+              id="email"
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">Password</label>
+          <div className="control">
+            <input
+              className="input"
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              id="password"
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="field">
               <label className="label">Zip Code</label>
-              <input
-                className="input"
-                type="text"
-                placeholder="Zip Code"
-                name="zipcode"
-                id="zipcode"
-                onChange={handleChange}
-                required
-              />
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Zip Code"
+                  name="zipcode"
+                  id="zipcode"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
-            <div className="field">
-              <button className="button" type="submit" id="register-button">
-                Submit
-              </button>
-              <button className="button" type="reset" id="cancel-button">
-                Cancel
-              </button>
-              <div>
+        
+        <div className="field is-grouped">
+          <div className="control">
+            <button
+              className="button"
+              type="submit"
+              id="register-button"
+            >
+              Submit
+            </button>
+          </div>
+          <div className="control">
+            <button className="button" type="reset" id="cancel-button">
+              Cancel
+            </button>
+          </div>
+        </div>
+
+        <div className="control">
                 {" "}
                 Want to register as a coffeeeshop? Email info@coffeepassport to
                 verify and{" "}
@@ -99,11 +111,10 @@ function Register({ currentUser, setCurrentUser }) {
                   Register
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
-      </form>
-    </div>
+
+      </section>
+    </form>
+  </div>
   );
 }
 

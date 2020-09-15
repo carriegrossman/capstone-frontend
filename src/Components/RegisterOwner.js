@@ -24,66 +24,89 @@ function RegisterOwner({setCurrentUser}) {
             })
     }
     return (
-        <div className="registerForm">
-            <form className="registerForm1" onSubmit={handleSubmit}>
-                <section className="section">
-                    <div className="container">
-                        <h1 className="title">Sign up</h1>
-                        <div className="field">
-                            <label className="label">Username</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Enter Username" name="username" id="username" onChange={handleChange} required />
-                                <span className="icon is-small is-left">
-                                    <i className="fas fa-user"></i>
-                                </span>
-                            </div>
-                        </div>
+<div className="registerForm">
+    <form className="registerForm1" onSubmit={handleSubmit}>
+      <h1>Register Your Coffee Shop</h1>
 
-                        <div className="field">
-                            <label className="label">Email</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Enter Email" name="email" id="email" onChange={handleChange} required />
-                                <span className="icon is-small is-left">
-                                    <i className="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div className="field">
-                            <label className="label">Password</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="password" placeholder="Enter Password" name="password" id="password" onChange={handleChange} required />
-                                <span className="icon is-small is-left">
-                                    <i className="fas fa-lock"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div className="field is-small">
-                            <label className="label">Zip Code</label>
-                            <div className="control has-icons-left has-icons-right">
-                                <input className="input" type="text" placeholder="Zip Code" name="zipcode" id="zipcode" onChange={handleChange} required />
-                            </div>
-                        </div>
-
-
-
-                        <div className="field is-grouped">
-
-                            <button className="button" type="submit" id="register-button">Submit</button>
-
-
-                            <button className="button" type="reset" id="cancel-button">Cancel</button>
-
-                        </div>
-                    </div>
-
-                </section>
-            </form>
-
+      <section className="section">
+        <label className="label">Username</label>
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            placeholder="Enter Username"
+            name="username"
+            id="username"
+            onChange={handleChange}
+            required
+          />
         </div>
+
+        <div className="field">
+          <label className="label">Email</label>
+          <div className="control">
+            <input
+              className="input"
+              type="email"
+              placeholder="Enter Email"
+              name="email"
+              id="email"
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">Password</label>
+          <div className="control">
+            <input
+              className="input"
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              id="password"
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="field">
+              <label className="label">Zip Code</label>
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Zip Code"
+                  name="zipcode"
+                  id="zipcode"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+        
+        <div className="field is-grouped">
+          <div className="control">
+            <button
+              className="button"
+              type="submit"
+              id="register-button"
+            >
+              Submit
+            </button>
+          </div>
+          <div className="control">
+            <button className="button" type="reset" id="cancel-button">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </section>
+    </form>
+  </div>
     );
 }
 
 export default RegisterOwner
-
