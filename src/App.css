@@ -2,17 +2,6 @@ html {
   background-color: rgb(254, 249, 239);
 }
 
-/* .navbar {
-  position: relative;
-  left: 6%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  background: #bc6c25;
-  width: 1106px;
-  height: 130px;
-} */
-
 .navbar {
   background: #b88d67;
   margin: auto;
@@ -22,6 +11,9 @@ html {
   align-items: center;
 }
 
+.navbar-start{
+  margin-right: 15%;
+}
 /* CSS for Login starts here */
 
 h1 {
@@ -40,30 +32,12 @@ h1 {
   background: #e9d5af;
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* left: 500px; */
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
 }
 
-.loginSubmit {
-  /* align-self: center; */
-  width: 114px;
-  height: 25px;
-  background: #ffffff;
-  border-radius: 5px;
-  display: inline-block;
-  margin-left: 15px;
-}
-.loginCancel {
-  align-self: center;
-  width: 114px;
-  height: 25px;
-  background: #ffffff;
-  border-radius: 5px;
-  margin-left: 5px;
-}
 
 .card {
   width: 200px;
@@ -77,50 +51,41 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* register css starts here */
+/* verication css starts here */
 
-.registerForm1 {
-  /* position: absolute; */
+.verifyForm{
+  width: 50%;
+  height: 75%;
   margin: auto;
   margin-top: 20px;
-  width: 400px;
-  height: 700px;
   background: #e9d5af;
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* left: 500px; */
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
 }
 
-.registerSubmit {
-  align-self: center;
-  width: 114px;
-  height: 25px;
-  background: #ffffff;
-  border-radius: 5px;
-  display: inline-block;
-  margin-left: 15px;
-}
-.registerCancel {
-  align-self: center;
-  width: 114px;
-  height: 25px;
-  background: #ffffff;
-  border-radius: 5px;
-  margin-left: 5px;
+
+/* register css starts here */
+
+.registerForm1 {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  height: 80%;
+  background: #e9d5af;
+  border: 2px solid #c0c0c0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 5px 12px;
 }
 
-.registerButton {
-  align-self: center;
-  width: 114px;
-  height: 25px;
-  background: #ffffff;
-  border-radius: 5px;
-  margin-left: 5px;
-}
+
 
 table,
 th,
@@ -164,9 +129,6 @@ h2 {
   margin-top: 1000px;
 }
 
-.logout{
-  background-color: beige;
-}
 
 .is-amber{
   background: #bc6c25;
