@@ -32,7 +32,7 @@ const MyCoffeeShops = ({currentUser, setCurrentShop}) => {
                             <div>{shop.address}</div>
                             <div>{shop.state}</div>
                             <Link to={`/${shop.id}/users`} onClick={()=>{setCurrentShop(shop.id)}} className = "button is-amber">Find User to Stamp</Link>
-                            
+                            <Link to={`coffeeshop/${shop.id}`} className="button is-warning">See Homepage </Link>
                         </div >
                     )
                 })}
