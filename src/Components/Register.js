@@ -57,7 +57,6 @@ function Register({ currentUser, setCurrentUser }) {
                 />
               </div>
             </div>
-
             <div className="field">
               <label className="label">Password</label>
               <div className="control">
@@ -71,37 +70,25 @@ function Register({ currentUser, setCurrentUser }) {
                   required
                 />
               </div>
-            </div>
 
+            </div>
             <div className="field">
               <label className="label">Zip Code</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Zip Code"
-                  name="zipcode"
-                  id="zipcode"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <input
+                className="input"
+                type="text"
+                placeholder="Zip Code"
+                name="zipcode"
+                id="zipcode"
+                onChange={handleChange}
+                required
+              />
             </div>
-
             <div className="field">
-              <button
-                className="button"
-                type="submit"
-                id="register-button"
-              >
+              <button className="button" type="submit" id="register-button">
                 Submit
               </button>
-
-              <button
-                className="button"
-                type="reset"
-                id="cancel-button"
-              >
+              <button className="button" type="reset" id="cancel-button">
                 Cancel
               </button>
               <div>
