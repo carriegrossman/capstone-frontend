@@ -172,3 +172,26 @@ h2 {
   background: #bc6c25;
 }
 
+.star{
+  width: 20px;
+}
+
+.stars{
+  display: flex;
+  flex-wrap: wrap
+}
+
+.reviews{
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 30px;
+}
+
+.visitcount{
+  background-color: peru;
+  padding: 30px;
+  width: 150px;
+  border-radius: 10%;
+}
