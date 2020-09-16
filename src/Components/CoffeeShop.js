@@ -85,7 +85,16 @@ const CoffeeShop = (props) => {
             });
     }, [props.match.params.id])
 
-
+    const formatDate = (date) => {
+        let split = date.split("")
+        if (split[5]==="0"){
+            let date = [split[6], "/", split[8], split[9], "/2020"]
+            return date.join("")
+        }else{
+            let date = ["1", split[6], "/", split[8], split[9], "/2020"]
+            return date.join("")
+        }
+    }
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value })
     }
@@ -158,7 +167,7 @@ const CoffeeShop = (props) => {
             <h2 className="subtitle"> {coffeeShopData.name} Updates</h2>
             {updates && updates.map((update) => {
                 return (<div className="card" key={update.id}>
-                    <div>{update.date}</div>
+                    <div>{formatDate(update.date)}</div>
                     <div>{update.owner_update}</div>
                     </div>)})}
         </div>
