@@ -22,6 +22,7 @@ import MyCoffeeShops from "./Components/MyCoffeeShops";
 import MyVisits from "./Components/MyVisits";
 import MyRewards from "./Components/MyRewards";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import About from "./Components/About"
 
 //
 function App() {
@@ -72,9 +73,6 @@ function App() {
               <Link className="navbar-item" to="/search">
                 Search
               </Link>
-              <Link className="navbar-item" to="/imageupload">
-                Upload an Image
-              </Link>
               <Link className="navbar-item" to="/myrewards">
                 My Rewards
               </Link>
@@ -112,7 +110,9 @@ function App() {
           {currentUser && !currentUser.owner && <Redirect to="/search" />}
           {currentUser && currentUser.owner && <Redirect to="/mycoffeeshops" />}
         </Route>
-        <Route path="/about" />
+        <Route path="/about" >
+          <About />
+        </Route>
         <Route path="/register">
           <Register setCurrentUser={setCurrentUser} />
           {currentUser && !currentUser.owner && <Redirect to="/search" />}
