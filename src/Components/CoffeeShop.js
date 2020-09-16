@@ -115,6 +115,21 @@ const CoffeeShop = (props) => {
     });
   };
 
+    const formatDate = (date) => {
+        let split = date.split("")
+        if (split[5]==="0"){
+            let date = [split[6], "/", split[8], split[9], "/2020"]
+            return date.join("")
+        }else{
+            let date = ["1", split[6], "/", split[8], split[9], "/2020"]
+            return date.join("")
+        }
+    }
+    const handleChange = (evt) => {
+        setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    }
+
+
   const handleUpdateSubmit = (evt) => {
     evt.preventDefault();
     const sendingData = {
@@ -255,6 +270,19 @@ const CoffeeShop = (props) => {
     </article>
   </div>
 </div>
+
+        {visitCount===0 && <div className="visitcount subtitle">No Visits Yet</div>}
+        {visitCount!==0 && <div className="visitcount subtitle">{visitCount} Visits</div>}
+
+        <div className="container updates">
+            <h2 className="subtitle"> {coffeeShopData.name} Updates</h2>
+            {updates && updates.map((update) => {
+                return (<div className="card" key={update.id}>
+                    <div>{formatDate(update.date)}</div>
+                    <div>{update.owner_update}</div>
+                    </div>)})}
+        </div>
+
 
 <div class="tile is-ancestor">
   <div class="tile is-parent">
