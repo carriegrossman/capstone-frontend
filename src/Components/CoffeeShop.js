@@ -130,10 +130,13 @@ const CoffeeShop = (props) => {
     if (updates) console.log(updates)
     if (!coffeeShopData) return <div>loading...</div>
 
-    return (<div key={coffeeShopData.id}>
+    return (
+        <div className="loginForm1">
+        <div key={coffeeShopData.id}>
         <div className="title">{coffeeShopData.name}</div>
         <div className="subtitle">{coffeeShopData.address}</div>
-        <div className="subtitle">{coffeeShopData.state}</div>
+        <div className="subtitle">{coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</div>
+        <div className="subtitle">{coffeeShopData.about}</div>
 
         {!props.currentUser.owner &&
             <div className="imageupload">
@@ -248,17 +251,27 @@ const CoffeeShop = (props) => {
                     </div>
 
                     <div className="field is-grouped">
-                        <button className="button" type="submit" id="register-button">
-                            Submit
-                    </button>
-
+                        <div className="control">
+                            <button
+                                className="button"
+                                type="submit"
+                                id="register-button"
+                            >
+                            Post a Review
+                        </button>
+                        </div>
+                        <div className="control">
                         <button className="button" type="reset" id="cancel-button">
                             Cancel
-                    </button>
+                        </button>
+                        </div>
                     </div>
                 </form>
-            </div>}
-    </div>)
+            </div>
+            }
+    </div>
+    </div>
+    )
 
 }
 
