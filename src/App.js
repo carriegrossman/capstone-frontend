@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "./images/brewsy1.png";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,12 +22,14 @@ import MyCoffeeShops from "./Components/MyCoffeeShops";
 import MyVisits from "./Components/MyVisits";
 import MyRewards from "./Components/MyRewards";
 import ProtectedRoute from "./Components/ProtectedRoute";
+
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
   // const [currentSearch, setCurrentSearch] = useState(undefined)
   const [currentShop, setCurrentShop] = useState(undefined);
   const logOut = () => {
+
     setCurrentUser(undefined);
   };
   //looks to see if current user cookie is still valid
@@ -37,6 +40,7 @@ function App() {
   //       if (data.loggedin === "true") setCurrentUser(data.user)
   //     })
   // }, [])
+
   return (
     <Router>
       {/* {currentUser && <Redirect to="/userhome" />} */}
@@ -59,6 +63,7 @@ function App() {
               </Link>
             </React.Fragment>
           )}
+
           {currentUser && (
             <React.Fragment>
               <Link className="navbar-item" to="/about">
@@ -78,6 +83,7 @@ function App() {
               </Link>
             </React.Fragment>
           )}
+
           {currentUser && currentUser.owner && (
             <React.Fragment>
               <Link className="navbar-item" to="/registershop">
@@ -89,6 +95,7 @@ function App() {
             </React.Fragment>
           )}
 
+
           {currentUser && (
             <React.Fragment>
               <Link className="button" onClick={logOut}>
@@ -96,6 +103,7 @@ function App() {
               </Link>
             </React.Fragment>
           )}
+
         </div>
       </nav>
       <Switch>
@@ -122,7 +130,7 @@ function App() {
             currentUser={currentUser}
           />
         </Route>
-        {/* <ProtectedRoute path="/imageupload" currentUser={currentUser} component={ImageUpload}/> */}
+
         <ProtectedRoute
           path="/coffeeshop/:id"
           currentUser={currentUser}
@@ -156,6 +164,7 @@ function App() {
           currentShop={currentShop}
           component={MyRewards}
         />
+
       </Switch>
     </Router>
   );
