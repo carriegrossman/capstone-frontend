@@ -84,9 +84,6 @@ const CoffeeShop = (props) => {
       });
   }, [props.match.params.id]);
 
-  const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
-  };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -271,17 +268,9 @@ const CoffeeShop = (props) => {
   </div>
 </div>
 
-        {visitCount===0 && <div className="visitcount subtitle">No Visits Yet</div>}
-        {visitCount!==0 && <div className="visitcount subtitle">{visitCount} Visits</div>}
+        
 
-        <div className="container updates">
-            <h2 className="subtitle"> {coffeeShopData.name} Updates</h2>
-            {updates && updates.map((update) => {
-                return (<div className="card" key={update.id}>
-                    <div>{formatDate(update.date)}</div>
-                    <div>{update.owner_update}</div>
-                    </div>)})}
-        </div>
+        
 
 
 <div class="tile is-ancestor">
@@ -296,7 +285,7 @@ const CoffeeShop = (props) => {
             updates.map((update) => {
               return (
                 <div className="card" key={update.id}>
-                  <div>{update.date}</div>
+                  <div>{formatDate(update.date)}</div>
                   <div>{update.owner_update}</div>
                 </div>
               );
