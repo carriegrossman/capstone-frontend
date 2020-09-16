@@ -86,9 +86,6 @@ function App() {
 
           {currentUser && currentUser.owner && (
             <React.Fragment>
-              <Link className="navbar-item" to="/registershop">
-                Register Shop
-              </Link>
               <Link className="navbar-item" to="/mycoffeeshops">
                 My CoffeeShops
               </Link>

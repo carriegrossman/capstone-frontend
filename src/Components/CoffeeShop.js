@@ -106,8 +106,19 @@ const CoffeeShop = (props) => {
             })
     }
 
+    const changeDateFormat = (date) => {
+        let split = date.split("")
+        if (split[5]==="0"){
+        let splitMonthDay = [split[6], "/", split[8], split[9], "/2020"]
+        return splitMonthDay.join("")
+        }else{
+        let splitMonthDay = [split[5], split[6], "/", split[8], split[9], "/2020"]
+        return splitMonthDay.join("")
+        }
+    } 
     const handleUpdateChange = (evt) => {
         setUpdateFormData({ ...updateFormData, [evt.target.name]: evt.target.value })
+        console.log(updateFormData)
     }
 
     const handleUpdateSubmit = (evt) => {
@@ -127,7 +138,6 @@ const CoffeeShop = (props) => {
             })
     }
 
-    if (updates) console.log(updates)
     if (!coffeeShopData) return <div>loading...</div>
 
     return (<div key={coffeeShopData.id}>
@@ -154,7 +164,7 @@ const CoffeeShop = (props) => {
             <h2 className="subtitle"> {coffeeShopData.name} Updates</h2>
             {updates && updates.map((update) => {
                 return (<div className="card" key={update.id}>
-                    <div>{update.date}</div>
+                    <div>{changeDateFormat(update.date)}</div>
                     <div>{update.owner_update}</div>
                     </div>)})}
         </div>

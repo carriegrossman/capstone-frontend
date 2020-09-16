@@ -22,6 +22,9 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
     <div>
       <div className="coffeeshopcontainer">
         <h2 className="title">My CoffeeShops</h2>
+        <Link className="button" to="/registershop">
+                Register Shop
+              </Link>
         <hr></hr>
         <div className="container">
           {myShops &&
@@ -51,3 +54,5 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
     </div>
   );
 };
+
+export default MyCoffeeShops
