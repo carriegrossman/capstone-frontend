@@ -38,6 +38,8 @@ const MyVisits = ({ currentUser }) => {
     <div className="visitcontainer">
       <h2 className="title">My Visits</h2>
       <hr></hr>
+      {!myVisits && <div>You haven't visited anywhere yet!</div>}
+      {myVisits && myVisits.length===0 && <div>You haven't visited anywhere yet!</div>}
       <div className="container">
         {myVisits &&
           myVisits.map((visit) => {
