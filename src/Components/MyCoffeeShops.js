@@ -51,3 +51,4 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
     </div>
   );
 };
+export default MyCoffeeShops;
