@@ -9,7 +9,7 @@ html {
   height: auto;
   display: flex;
   align-items: center;
-}
+} 
 
 .navbar-start {
   margin-right: 15%;
@@ -140,7 +140,7 @@ h3 {
 }
 
 .star {
-  width: 20px;
+  width: 40px;
 }
 
 .stars {
@@ -149,11 +149,12 @@ h3 {
 }
 
 .reviews {
-  background-color: green;
+  background-color:white;
   display: flex;
   flex-direction: column;
   width: 400px;
   padding: 30px;
+  border: 4px brown solid;
 }
 
 .visitcount {
@@ -264,4 +265,17 @@ hr {
 .footer-center {
   display: flex;
   justify-content: center;
+}
+
+.homebanner{
+  width: 100%;
+}
+
+.banner {
+  width: 100%;
+}
+
+.logo{
+  height: 100px;
+  width: auto;
 }

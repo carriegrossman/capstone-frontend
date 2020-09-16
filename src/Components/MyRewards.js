@@ -56,13 +56,15 @@ const MyRewards = ({ currentUser }) => {
       }
     }
     setMyRewards(addUpdate);
-    console.log(myRewards);
   };
 
+  if (myRewards) console.log(myRewards)
   return (
     <div className="rewardcontainer">
       <h2 className="title">Your Rewards</h2>
       <hr></hr>
+      {!myRewards && <div>You don't have any rewards yet!</div>}
+      {myRewards && myRewards.length===0 && <div>You don't have any rewards yet!</div>}
       <div className="container">
         {myRewards &&
           myRewards

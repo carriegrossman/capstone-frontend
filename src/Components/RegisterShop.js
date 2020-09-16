@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {Redirect} from "react-router-dom"
 
 const RegisterShop = ({ currentUser, setCurrentUser }) => {
     const [formData, setFormData] = useState({})
@@ -25,11 +26,13 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
                 setCurrentShop(data)
                 
             })
+            
     }
+
+    if (currentShop) return (<Redirect to="/mycoffeeshops" />)
+    
     return (<div>
         <h3>Welcome {currentUser.username}, Let's get your coffeeshop set up!</h3>
-        {currentShop && <div>Welcome to {currentShop[0].name}</div>}
-
         <div className="registerForm">
         <form className="registerForm1" onSubmit={handleSubmit}>
             <h1>Set Up Your Coffee Shop</h1>
