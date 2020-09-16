@@ -18,18 +18,17 @@ const Verification = () => {
     return (
         <React.Fragment>
             <div className="verificationCode">
-                <form>
+                <form className="verifyForm">
                     <label className="label">Verification Code
                     <div className="control">
                             <input className="input" type="password" placeholder="Enter code from email" name="verificationCode" id="verificationCode"  required />
                         </div>
                     </label>
-                    <Link className="button is-warning"to="/registerowner">Submit</Link>
-                    {/* <button className="button" type="submit" id="register-button" onClick={handleSubmit}>Submit</button> */}
+                    <Link className="button"to="/registerowner">Submit</Link>
+                    <div>Mean to register as User?</div>
+                <Link className="button" to="/register">Click Here!</Link>
                 </form>
-                <div>Mean to register as User?</div>
-                <Link className="button is-warning" to="/register">Click Here!</Link>
-            </div>
+                </div>  
         </React.Fragment>)
 }
 export default Verification 
