@@ -23,6 +23,8 @@ import MyVisits from "./Components/MyVisits";
 import MyRewards from "./Components/MyRewards";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Footer from "./Components/Footer";
+import About from "./Components/About"
+
 
 //
 function App() {
@@ -72,9 +74,6 @@ function App() {
               <Link className="navbar-item" to="/search">
                 Search
               </Link>
-              <Link className="navbar-item" to="/imageupload">
-                Upload an Image
-              </Link>
               <Link className="navbar-item" to="/myrewards">
                 My Rewards
               </Link>
@@ -86,9 +85,6 @@ function App() {
 
           {currentUser && currentUser.owner && (
             <React.Fragment>
-              <Link className="navbar-item" to="/registershop">
-                Register Shop
-              </Link>
               <Link className="navbar-item" to="/mycoffeeshops">
                 My CoffeeShops
               </Link>
@@ -110,7 +106,9 @@ function App() {
           {currentUser && !currentUser.owner && <Redirect to="/search" />}
           {currentUser && currentUser.owner && <Redirect to="/mycoffeeshops" />}
         </Route>
-        <Route path="/about" />
+        <Route path="/about" >
+          <About />
+        </Route>
         <Route path="/register">
           <Register setCurrentUser={setCurrentUser} />
           {currentUser && !currentUser.owner && <Redirect to="/search" />}
@@ -163,9 +161,7 @@ function App() {
           component={MyRewards}
         />
       </Switch>
-      <Switch>
-        <Footer />
-      </Switch>
+      <Footer />
     </Router>
   );
 }
