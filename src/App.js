@@ -41,7 +41,10 @@ function App() {
     <Router>
       {/* {currentUser && <Redirect to="/userhome" />} */}
       <nav className="navbar">
-        <img src={logo} alt="brewsy logo" className="logo" />
+        <div className="navbar-start">
+          <img src={logo} alt="brewsy logo" className="logo" />
+        </div>
+
         <div className="navbar-end">
           {!currentUser && (
             <React.Fragment>
@@ -85,11 +88,12 @@ function App() {
               </Link>
             </React.Fragment>
           )}
+
           {currentUser && (
             <React.Fragment>
-              <button className="navbar-item" onClick={logOut}>
+              <Link className="button" onClick={logOut}>
                 Log Out
-              </button>
+              </Link>
             </React.Fragment>
           )}
         </div>
