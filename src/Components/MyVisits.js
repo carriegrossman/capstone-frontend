@@ -35,7 +35,7 @@ const MyVisits = ({ currentUser }) => {
   }, [currentUser]);
 
   return (
-    <div className="notication">
+    <div className="notification">
       <h2 className="title">My Visits</h2>
       <div className="container">
         {myVisits &&

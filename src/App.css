@@ -11,7 +11,7 @@ html {
   align-items: center;
 }
 
-.navbar-start{
+.navbar-start {
   margin-right: 15%;
 }
 /* CSS for Login starts here */
@@ -38,7 +38,6 @@ h1 {
   padding: 5px 12px;
 }
 
-
 .card {
   width: 200px;
   padding: 20px;
@@ -53,7 +52,7 @@ h1 {
 
 /* verication css starts here */
 
-.verifyForm{
+.verifyForm {
   width: 50%;
   height: 75%;
   margin: auto;
@@ -66,7 +65,6 @@ h1 {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
 }
-
 
 /* register css starts here */
 
@@ -84,8 +82,6 @@ h1 {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
 }
-
-
 
 input {
   width: 100%;
@@ -138,7 +134,6 @@ h3 {
 .colorline {
   margin-top: 1000px;
 }
-
 
 .is-amber {
   background: #bc6c25;
@@ -220,3 +215,38 @@ button:hover {
   border: #ff7a59 solid 1px;
   background: #fff;
 }
+
+.coffeeshopcontainer {
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+  height: 75%;
+  background: rgb(232, 237, 223);
+  border: 2px solid #c0c0c0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* left: 500px; */
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 5px 12px;
+}
+
+hr {
+  color: black;
+}
+
+.rewardcontainer {
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+  height: 75%;
+  background: rgb(232, 237, 223);
+  border: 2px solid #c0c0c0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* left: 500px; */
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 5px 12px;
+}
+
