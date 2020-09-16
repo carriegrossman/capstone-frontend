@@ -24,6 +24,7 @@ const MyCoffeeShops = ({currentUser, setCurrentShop}) => {
     return (
         <div>
            <h2 className="title">My CoffeeShops</h2>
+           <Link className="navbar-item" to="/registershop">Register A Shop</Link>
             <div className="container">
                 {myShops && myShops.map(shop => {
                     return (

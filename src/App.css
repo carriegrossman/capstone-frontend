@@ -168,6 +168,25 @@ h3 {
   border-radius: 10%;
 }
 
+
+.imageupload{
+  width: 400px;
+}
+
+/* .shopimages{
+  display: flex;
+  width: 1000px;
+  flex-wrap: wrap;
+  background-color: plum;
+  padding: 20px;
+} */
+
+.shopimage{
+  width: 150px;
+  border-radius: 10%;
+  padding: 10px;
+}
+
 title {
   align-self: center;
 }
