@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import banner from "../images/banner.png"
 
 function Login({ currentUser, setCurrentUser }) {
   const [formData, setFormData] = useState({});

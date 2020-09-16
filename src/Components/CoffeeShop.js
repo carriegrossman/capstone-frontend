@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ImageUpload from "./ImageUpload"
+import mug from "../images/mugs.png"
 
 const CoffeeShop = (props) => {
     const [coffeeShopData, setCoffeeShopData] = useState(null)
@@ -150,7 +151,8 @@ const CoffeeShop = (props) => {
                 </div>)
             })}
         </div>
-        {visitCount && <div className="visitcount subtitle">{visitCount} Visits</div>}
+        {visitCount===0 && <div className="visitcount subtitle">No Visits Yet</div>}
+        {visitCount!==0 && <div className="visitcount subtitle">{visitCount} Visits</div>}
 
         <div className="container updates">
             <h2 className="subtitle"> {coffeeShopData.name} Updates</h2>
@@ -163,6 +165,8 @@ const CoffeeShop = (props) => {
 
         <div className="reviews">
             <h2 className="subtitle">REVIEWS of {coffeeShopData.name}</h2>
+            {!reviews && <div>No reviews written yet!</div>}
+            {reviews && reviews.length===0 && <div>No reviews written yet!</div>}
             {reviews && reviews.map((review) => {
                 return (<div  key={review.id}>
     
@@ -170,39 +174,39 @@ const CoffeeShop = (props) => {
                     <div>{review.review}</div>
                     {review.stars === 5 &&
                         <div className="stars">
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
                         </div>}
                     {review.stars === 4 &&
                         <div className="stars">
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
                         </div>}
                     {review.stars === 3 &&
                         <div className="stars">
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
                         </div>}
                     {review.stars === 2 &&
                         <div className="stars">
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
                         </div>}
                     {review.stars === 1 &&
                         <div className="stars">
-                            <img src='https://yakimaymca.org/wp-content/uploads/2018/11/Star.png' className='star' alt="star" />
+                            <img src={mug} className='star' alt="star" />
                         </div>}
                 </div>)
             })}
 
         </div>
-        {props.currentUser.owner &&
+        {props.currentUser.id === coffeeShopData.owner_id  &&
         <div className="ownerupdates">
             <h2 className="title">Owner Updates</h2>
             <form onSubmit={handleUpdateSubmit}>
