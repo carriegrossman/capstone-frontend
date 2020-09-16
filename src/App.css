@@ -163,8 +163,7 @@ h3 {
   border-radius: 10%;
 }
 
-
-.imageupload{
+.imageupload {
   width: 400px;
 }
 
@@ -176,7 +175,7 @@ h3 {
   padding: 20px;
 } */
 
-.shopimage{
+.shopimage {
   width: 150px;
   border-radius: 10%;
   padding: 10px;
@@ -235,7 +234,8 @@ hr {
   color: black;
 }
 
-.rewardcontainer {
+.rewardcontainer,
+.visitcontainer {
   margin: auto;
   margin-top: 20px;
   width: 80%;
@@ -250,3 +250,18 @@ hr {
   padding: 5px 12px;
 }
 
+.footer {
+  background-color: rgb(254, 249, 239);
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.footer h2 {
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+.footer-center {
+  display: flex;
+  justify-content: center;
+}
