@@ -152,13 +152,13 @@ const CoffeeShop = (props) => {
   return (
     <div className="loginForm1">
         <div key={coffeeShopData.id}>
-        <div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">{coffeeShopData.name}</p>
-      <p class="subtitle">{coffeeShopData.address}, {coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</p>
+        <div className="tile is-ancestor">
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+      <p className="title">{coffeeShopData.name}</p>
+      <p className="subtitle">{coffeeShopData.address}, {coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</p>
       <hr></hr>
-      <div class="content">
+      <div className="content">
         <h4>Total Coffee Shop Visits: </h4>
         <p> {visitCount === 0 && (
           <div className="visitcount subtitle">No Visits Yet</div>
@@ -168,7 +168,7 @@ const CoffeeShop = (props) => {
         )}</p>
       </div>
             <hr></hr>
-      <div class="content">
+      <div className="content">
       {!props.currentUser.owner && (
           <div className="imageupload">
             <ImageUpload
@@ -182,10 +182,10 @@ const CoffeeShop = (props) => {
       </div>
     </article>
   </div>
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-        <p class="title">REVIEWS of {coffeeShopData.name}</p>
-      <div class="content">
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+        <p className="title">REVIEWS of {coffeeShopData.name}</p>
+      <div className="content">
       <div>
           {!reviews && <div>No reviews written yet!</div>}
           {reviews && reviews.length === 0 && (
@@ -241,12 +241,12 @@ const CoffeeShop = (props) => {
 </div>
 
 
-<div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">Pictures</p>
-      <p class="subtitle">Hello there, how do you brew?</p>
-      <div class="content">
+<div className="tile is-ancestor">
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+      <p className="title">Pictures</p>
+      <p className="subtitle">Hello there, how do you brew?</p>
+      <div className="content">
         <div className="container">
           {shopImages &&
             shopImages.map((image) => {
@@ -273,12 +273,12 @@ const CoffeeShop = (props) => {
         
 
 
-<div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <p class="title">{coffeeShopData.name} Updates</p>
-      <p class="subtitle">Here's the biz....</p>
-      <div class="content">
+<div className="tile is-ancestor">
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+      <p className="title">{coffeeShopData.name} Updates</p>
+      <p className="subtitle">Here's the biz....</p>
+      <div className="content">
       <div className="container updates">
           <h2 className="subtitle"> </h2>
           {updates &&
@@ -298,9 +298,9 @@ const CoffeeShop = (props) => {
 
         
         {props.currentUser.id === coffeeShopData.owner_id && (
-        <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
+        <div className="tile is-ancestor">
+        <div className="tile is-parent">
+          <article className="tile is-child box">
           <div className="ownerupdates">
             <h2 className="title">Owner Updates</h2>
             <form onSubmit={handleUpdateSubmit}>
@@ -355,9 +355,9 @@ const CoffeeShop = (props) => {
 
         
         {!props.currentUser.owner && (
-        <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
+        <div className="tile is-ancestor">
+        <div className="tile is-parent">
+          <article className="tile is-child box">
           <div className="reviewForm">
             <h1>Leave a Review</h1>
             <form onSubmit={handleSubmit}>
