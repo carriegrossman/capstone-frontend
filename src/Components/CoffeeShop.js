@@ -159,7 +159,7 @@ const CoffeeShop = (props) => {
       <p className
       ="subtitle">{coffeeShopData.address}, {coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</p>
       <hr></hr>
-      <div class="content">
+      <div className="content">
         <h4>Total Coffee Shop Visits: </h4>
         {visitCount === 0 && (
           <div className="visitcount subtitle">No Visits Yet</div>
@@ -169,6 +169,7 @@ const CoffeeShop = (props) => {
         )}
       </div>
             <hr></hr>
+
       <div className ="content">
       {!props.currentUser.owner && (
           <div className="imageupload">
@@ -184,9 +185,11 @@ const CoffeeShop = (props) => {
     </article>
   </div>
   <div className="tile is-parent">
+
     <article className ="tile is-child box">
         <p className ="title">REVIEWS of {coffeeShopData.name}</p>
       <div className ="content">
+
       <div>
           {!reviews && <div>No reviews written yet!</div>}
           {reviews && reviews.length === 0 && (
@@ -356,9 +359,9 @@ const CoffeeShop = (props) => {
 
         
         {!props.currentUser.owner && (
-        <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
+        <div className="tile is-ancestor">
+        <div className="tile is-parent">
+          <article className="tile is-child box">
           <div className="reviewForm">
             <h1>Leave a Review</h1>
             <form onSubmit={handleSubmit}>
