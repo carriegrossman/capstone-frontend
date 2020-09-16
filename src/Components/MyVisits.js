@@ -35,8 +35,9 @@ const MyVisits = ({ currentUser }) => {
   }, [currentUser]);
 
   return (
-    <div className="notification">
+    <div className="visitcontainer">
       <h2 className="title">My Visits</h2>
+      <hr></hr>
       <div className="container">
         {myVisits &&
           myVisits.map((visit) => {

@@ -22,6 +22,7 @@ import MyCoffeeShops from "./Components/MyCoffeeShops";
 import MyVisits from "./Components/MyVisits";
 import MyRewards from "./Components/MyRewards";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import Footer from "./Components/Footer";
 
 //
 function App() {
@@ -29,7 +30,6 @@ function App() {
   // const [currentSearch, setCurrentSearch] = useState(undefined)
   const [currentShop, setCurrentShop] = useState(undefined);
   const logOut = () => {
-
     setCurrentUser(undefined);
   };
   //looks to see if current user cookie is still valid
@@ -95,7 +95,6 @@ function App() {
             </React.Fragment>
           )}
 
-
           {currentUser && (
             <React.Fragment>
               <Link className="button" onClick={logOut}>
@@ -103,7 +102,6 @@ function App() {
               </Link>
             </React.Fragment>
           )}
-
         </div>
       </nav>
       <Switch>
@@ -164,7 +162,9 @@ function App() {
           currentShop={currentShop}
           component={MyRewards}
         />
-
+      </Switch>
+      <Switch>
+        <Footer />
       </Switch>
     </Router>
   );
