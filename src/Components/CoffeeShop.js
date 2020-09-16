@@ -146,7 +146,7 @@ const CoffeeShop = (props) => {
       });
   };
 
-  if (updates) console.log(updates);
+
   if (!coffeeShopData) return <div>loading...</div>;
 
   return (
@@ -156,19 +156,21 @@ const CoffeeShop = (props) => {
   <div className="tile is-parent">
     <article className="tile is-child box">
       <p className="title">{coffeeShopData.name}</p>
-      <p className="subtitle">{coffeeShopData.address}, {coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</p>
+      <p className
+      ="subtitle">{coffeeShopData.address}, {coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</p>
       <hr></hr>
       <div className="content">
         <h4>Total Coffee Shop Visits: </h4>
-        <p> {visitCount === 0 && (
+        {visitCount === 0 && (
           <div className="visitcount subtitle">No Visits Yet</div>
         )}
         {visitCount !== 0 && (
           <div className="visitcount subtitle">{visitCount} Visits</div>
-        )}</p>
+        )}
       </div>
             <hr></hr>
-      <div className="content">
+
+      <div className ="content">
       {!props.currentUser.owner && (
           <div className="imageupload">
             <ImageUpload
@@ -183,9 +185,11 @@ const CoffeeShop = (props) => {
     </article>
   </div>
   <div className="tile is-parent">
-    <article className="tile is-child box">
-        <p className="title">REVIEWS of {coffeeShopData.name}</p>
-      <div className="content">
+
+    <article className ="tile is-child box">
+        <p className ="title">REVIEWS of {coffeeShopData.name}</p>
+      <div className ="content">
+
       <div>
           {!reviews && <div>No reviews written yet!</div>}
           {reviews && reviews.length === 0 && (
