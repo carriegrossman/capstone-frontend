@@ -107,19 +107,8 @@ const CoffeeShop = (props) => {
             })
     }
 
-    const changeDateFormat = (date) => {
-        let split = date.split("")
-        if (split[5]==="0"){
-        let splitMonthDay = [split[6], "/", split[8], split[9], "/2020"]
-        return splitMonthDay.join("")
-        }else{
-        let splitMonthDay = [split[5], split[6], "/", split[8], split[9], "/2020"]
-        return splitMonthDay.join("")
-        }
-    } 
     const handleUpdateChange = (evt) => {
         setUpdateFormData({ ...updateFormData, [evt.target.name]: evt.target.value })
-        console.log(updateFormData)
     }
 
     const handleUpdateSubmit = (evt) => {
@@ -138,16 +127,16 @@ const CoffeeShop = (props) => {
 
             })
     }
-    
+
+    if (updates) console.log(updates)
     if (!coffeeShopData) return <div>loading...</div>
 
     return (
-        <div className="loginForm1">
+        <div className="loginForm1" >
         <div key={coffeeShopData.id}>
         <div className="title">{coffeeShopData.name}</div>
         <div className="subtitle">{coffeeShopData.address}</div>
-        <div className="subtitle">{coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</div>
-        <div className="subtitle">{coffeeShopData.about}</div>
+        <div className="subtitle">{coffeeShopData.state}</div>
 
         {!props.currentUser.owner &&
             <div className="imageupload">
@@ -169,7 +158,7 @@ const CoffeeShop = (props) => {
             <h2 className="subtitle"> {coffeeShopData.name} Updates</h2>
             {updates && updates.map((update) => {
                 return (<div className="card" key={update.id}>
-                    <div>{changeDateFormat(update.date)}</div>
+                    <div>{update.date}</div>
                     <div>{update.owner_update}</div>
                     </div>)})}
         </div>
@@ -265,20 +254,13 @@ const CoffeeShop = (props) => {
                     </div>
 
                     <div className="field is-grouped">
-                        <div className="control">
-                            <button
-                                className="button"
-                                type="submit"
-                                id="register-button"
-                            >
-                            Post a Review
-                        </button>
-                        </div>
-                        <div className="control">
+                        <button className="button" type="submit" id="register-button">
+                            Submit
+                    </button>
+
                         <button className="button" type="reset" id="cancel-button">
                             Cancel
-                        </button>
-                        </div>
+                    </button>
                     </div>
                 </form>
             </div>
