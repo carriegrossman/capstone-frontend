@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from './images/brewsy1.png';
 
 import {
@@ -23,6 +23,7 @@ import MyCoffeeShops from "./Components/MyCoffeeShops"
 import MyVisits from "./Components/MyVisits"
 import MyRewards from "./Components/MyRewards"
 import ProtectedRoute from "./Components/ProtectedRoute";
+
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -33,14 +34,14 @@ function App() {
   const logOut = () => {
     setCurrentUser(undefined)
   }
-  //looks to see if current user cookie is still valid
-  // useEffect(() => {
-  //   fetch("/currentUser")
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       if (data.loggedin === "true") setCurrentUser(data.user)
-  //     })
-  // }, [])
+  // looks to see if current user cookie is still valid
+  useEffect(() => {
+    fetch("/currentUser")
+      .then(res => res.json())
+      .then(data => {
+        if (data.loggedin === "true") setCurrentUser(data.user)
+      })
+  }, [])
 
  
 
@@ -64,7 +65,6 @@ function App() {
           <React.Fragment>
           <Link className="navbar-item" to="/about">About</Link>
           <Link className="navbar-item" to="/search">Search</Link>
-          <Link className="navbar-item" to="/imageupload">Upload an Image</Link>
           <Link className="navbar-item" to="/myrewards">My Rewards</Link>
           <Link className="navbar-item" to="/myvisits">My Visits</Link>
           </React.Fragment>
@@ -72,7 +72,6 @@ function App() {
 
           {currentUser  && currentUser.owner &&
           <React.Fragment>
-          <Link className="navbar-item" to="/registershop">Register Shop</Link>
           <Link className="navbar-item" to="/mycoffeeshops">My CoffeeShops</Link>
           </React.Fragment>
           }
@@ -106,7 +105,6 @@ function App() {
         <Route path="/registershop">
           <RegisterShop setCurrentUser={setCurrentUser} currentUser={currentUser} />
         </Route>
-        {/* <ProtectedRoute path="/imageupload" currentUser={currentUser} component={ImageUpload}/> */}
         <ProtectedRoute path="/coffeeshop/:id" currentUser={currentUser} component={CoffeeShop}/>
         <ProtectedRoute path="/search" currentUser={currentUser} component={Search}/>
         <ProtectedRoute path="/:id/users" currentUser={currentUser} component={Users}/>
