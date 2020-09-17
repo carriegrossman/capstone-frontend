@@ -113,15 +113,6 @@ input {
 
 /* passport css starts here */
 
-.passportContainer {
-  background-color: white;
-  display: flex;
-  margin-left: 200px;
-  width: 900px;
-  height: 900px;
-  vertical-align: baseline;
-}
-
 .coffeeshop {
   margin: 10px;
 }
