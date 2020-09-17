@@ -18,7 +18,7 @@ const Verification = () => {
     return (
         <React.Fragment>
             <div className="verificationCode">
-                <form className="verifyForm">
+                <form className="Form1">
                     <label className="label">Verification Code
                     <div className="control">
                             <input className="input" type="password" placeholder="Enter code from email" name="verificationCode" id="verificationCode"  required />

@@ -27,8 +27,8 @@ function Login({ currentUser, setCurrentUser }) {
   };
 
   return (
-    <div className="loginForm">
-      <form className="loginForm1" onSubmit={handleSubmit}>
+    <div className="Form">
+      <form className="Form1" onSubmit={handleSubmit}>
         <h1> Login Form</h1>
         <section className="section">
           <label className="label">Username</label>

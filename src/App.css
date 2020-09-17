@@ -1,18 +1,18 @@
 html {
-  background-color:rgba(245,245,239);
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  background-color: rgba(245, 245, 239);
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 .navbar {
-  background: rgba(245,245,239);
+  background: rgba(245, 245, 239);
   margin: auto;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 .navbar-start {
@@ -22,13 +22,12 @@ html {
 
 h1 {
   font-size: 24px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   padding-top: 20px;
 }
 
-.loginForm1 {
+.Form1 {
   width: 80%;
   height: 75%;
   margin: auto;
@@ -37,8 +36,7 @@ h1 {
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 200;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 30px 20px;
 }
 
@@ -46,8 +44,8 @@ h1 {
   width: 200px;
   padding: 20px;
   margin: 10px;
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
   text-align: center;
 }
 
@@ -63,14 +61,13 @@ h1 {
   height: 75%;
   margin: auto;
   margin-top: 20px;
-  background: #e9d5af;
+  background: rgba(204, 118, 46);
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 200;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 5px 12px;
-  color: rgb(135,103,78);
+  color: rgb(135, 103, 78);
 }
 
 /* register css starts here */
@@ -81,14 +78,13 @@ h1 {
   margin-bottom: 20px;
   width: 80%;
   height: 80%;
-  background: #e9d5af;
+  background: rgba(204, 118, 46);
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 200;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 5px 12px;
-  color: rgb(135,103,78);
+  color: rgb(135, 103, 78);
 }
 
 input {
@@ -98,8 +94,8 @@ input {
   border: 1px solid #dbdbdb;
   box-sizing: border-box;
   border-radius: 3px;
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 /* passport css starts here */
@@ -153,32 +149,25 @@ h3 {
 }
 
 .reviews {
-  background-color:white;
+  background-color: white;
   display: flex;
   flex-direction: column;
   width: 400px;
   padding: 30px;
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 .visitcount {
   padding: 30px;
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 .imageupload {
   width: 100%;
 }
 
-/* .shopimages{
-  display: flex;
-  width: 1000px;
-  flex-wrap: wrap;
-  background-color: plum;
-  padding: 20px;
-} */
 
 .shopimage {
   width: 150px;
@@ -198,12 +187,10 @@ title {
   background: #e9d5af;
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* left: 500px; */
   font-weight: 200;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 5px 12px;
-  color: rgb(135,103,78);
+  color: rgb(135, 103, 78);
 }
 
 button {
@@ -236,33 +223,19 @@ hr {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   /* left: 500px; */
   font-weight: 200;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 5px 12px;
 }
 
 .footer {
-  background-color: white;
   height: 3rem;
-  display: flex;
-  align-items: center;
-}
-.footer h2,
-h3 {
   text-align: center;
-  font-size: 1rem;
-  padding-top: 1rem;
-  word-spacing: inherit;
-  line-height: 0.4em;
-  left: -0.37em;
-}
-.footer-center {
-  display: flex;
-  justify-content: center;
+  background-color:rgba(245,245,239);
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
 }
 
-
-.homebanner{
+.homebanner {
   width: 100%;
 }
 
@@ -270,34 +243,33 @@ h3 {
   width: 100%;
 }
 
-.logo{
+.logo {
   height: 100px;
   width: auto;
 }
 
 .button, .field,.title, .subtitle, label{
   font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  color: rgb(135,103,78)
 }
 
-.carditem{
+.carditem {
   display: flex;
   flex-wrap: wrap;
-  color: rgb(135,103,78);
+  color: rgb(135, 103, 78);
   justify-content: space-evenly;
   object-position: bottom;
 }
 
-.icon{
+.icon {
   width: 60px;
   height: 60px;
 }
 
-.trial{
+.trial {
   display: flex;
   flex-direction: column;
   text-decoration: none;
   margin: 8px 0px;
-  align-content: center
+  align-content: center;
 }
-
