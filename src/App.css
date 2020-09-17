@@ -275,7 +275,7 @@ h3 {
   width: auto;
 }
 
-.button, .field, .titel, .subtitle, label{
+.button, .field,.title, .subtitle, label{
   font-family: 'Poppins', sans-serif;
   color: rgb(135,103,78);
 }
