@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import rewardImg from "../images/Reward.png";
 
 const MyRewards = ({ currentUser }) => {
   const [myRewards, setMyRewards] = useState(undefined);
@@ -76,6 +77,7 @@ const MyRewards = ({ currentUser }) => {
                 <div className="card" key={reward.id}>
                   {reward.rewards} reward to:
                   <div className="subtitle">{reward.store.name}</div>
+                  <img className="icon" src={rewardImg} alt="shopicon" />
                   <button
                     className="button"
                     onClick={() => {

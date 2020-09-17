@@ -105,7 +105,7 @@ function Register({ currentUser, setCurrentUser }) {
 
         <div className="control">
                 {" "}
-                Want to register as a coffeeeshop? Email info@coffeepassport to
+                Want to register as a coffeeeshop? Email info@brewsy.com to
                 verify and{" "}
                 <Link className="registerbutton" to="/verifyshop">
                   Register

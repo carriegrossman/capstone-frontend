@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import MyRewards from "./MyRewards";
+import MyRewards from "./MyRewards"
+import locationImg from "../images/location.png";
+
 
 const MyVisits = ({ currentUser }) => {
   const [myVisits, setMyVisits] = useState(undefined);
@@ -37,6 +39,7 @@ const MyVisits = ({ currentUser }) => {
 
   return (
     <div>
+
       <div className="loginForm1">
         <h2 className="title">My Visits</h2>
         <hr></hr>
@@ -55,6 +58,7 @@ const MyVisits = ({ currentUser }) => {
               );
             })}
         </div>
+
       </div>
       <MyRewards currentUser={currentUser} />
     </div>

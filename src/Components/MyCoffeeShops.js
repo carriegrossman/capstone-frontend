@@ -24,7 +24,7 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   return (
     <div className="loginForm1">
       <div className="coffeeshopcontainer">
-        <h2 className="title">My CoffeeShops</h2>
+        <h2 className="title">My Coffee Shops</h2>
         <hr></hr>
         <Link className="button" to="/registershop">
           Register Shop
