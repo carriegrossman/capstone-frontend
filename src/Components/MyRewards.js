@@ -72,9 +72,10 @@ const MyRewards = ({ currentUser }) => {
             .map((reward) => {
               return (
                 <div className="card" key={reward.id}>
-                  Your have {reward.rewards} reward to: {reward.store.name}
+                  {reward.rewards} reward to: 
+                  <div className="subtitle">{reward.store.name}</div>
                   <button
-                    className="button is-warning"
+                    className="button"
                     onClick={() => {
                       handleReward(reward.coffeeshop_id);
                     }}

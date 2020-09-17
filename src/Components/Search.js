@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import locationImg from "../images/location.png";
 
 const Search = ({ currentUser }) => {
     const [currentShops, setCurrentShops] = useState(undefined);
@@ -18,22 +19,26 @@ const Search = ({ currentUser }) => {
             });
     }, [])
 
-    const  handleChange = (evt) => {
+    const handleChange = (evt) => {
         setFormData(evt.target.value)
     }
 
+    const Reset = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setCurrentSearch(undefined)
+        setFormData(undefined)
+    }
+    console.log({ currentSearch })
+
+
     const handleSubmit = (evt) => {
         evt.preventDefault()
-       
-        let filtered = (currentShops.filter((shop) => shop.zipcode === Number(formData)))
-        if (filtered.length ===0) {
-            setCurrentSearch("none")
-        }else{
-            setCurrentSearch(filtered)
-        }
+        let filtered = currentShops.filter((shop) => shop.zipcode === Number(formData));
+        setCurrentSearch(filtered)
     }
 
-   
+
 
     if (currentSearch) console.log(currentSearch)
     return (
@@ -44,53 +49,52 @@ const Search = ({ currentUser }) => {
                 <input className="input" type="text" placeholder="Enter Zipcode" onChange={handleChange} />
                 <div className="field is-grouped">
                     <div className="control">
-                        <button className="button is-warning" type="submit">Search</button>
+                        <button className="button" type="submit">Search</button>
                     </div>
                     <div className="control">
-                        <button className="button is-warning" onClick={()=> setCurrentSearch(undefined)}>Reset</button>
+                        <button className="button" type="reset" onClick={Reset}>Reset</button>
                     </div>
                 </div>
             </form>
-                <div className="container">
-                    {currentSearch && currentSearch === "none" && 
+            <div className="container">
+                {currentSearch && currentSearch.length === 0 &&
                     <div>Sorry no coffeeshops found with that zipcode!</div>}
-                    {currentSearch && currentSearch !== "none" && currentSearch.map((shop) => {
+                {currentSearch && currentSearch.length !== 0 && currentSearch.map((shop) => {
+                    return (
+                        <div className="card" key={shop.id}>
+                            <div className="subtitle">{shop.name}</div>
+                            <div>{shop.address}</div>
+                            <div>{shop.city}</div>
+                            <div>{shop.state}</div>
+                            <div>{shop.zipcode}</div>
+                            <div className='carditem'>
+                            <Link to={`coffeeshop/${shop.id}`} className="trial">
+                                <img className="icon" src={locationImg} alt="shopicon" />
+                                <div>Home</div>
+                            </Link>
+                            </div>
+                        </div>
+                    );
+                })}
+                {!currentSearch && currentShops &&
+                    currentShops.map((shop) => {
                         return (
                             <div className="card" key={shop.id}>
-                                <div>{shop.name}</div>
+                                <div className="subtitle">{shop.name}</div>
                                 <div>{shop.address}</div>
                                 <div>{shop.city}</div>
                                 <div>{shop.state}</div>
                                 <div>{shop.zipcode}</div>
-                                <Link
-                                    to={`coffeeshop/${shop.id}`}
-                                    className="button is-warning"
-                                >
-                                    See Homepage
-                </Link>
+                                <div className='carditem'>
+                                <Link to={`coffeeshop/${shop.id}`} className="trial">
+                                    <img className="icon" src={locationImg} alt="shopicon" />
+                                    <div>Home</div>
+                                </Link>
+                                </div>
                             </div>
                         );
                     })}
-
-                    {!currentSearch && currentShops &&
-                        currentShops.map((shop) => {
-                            return (
-                                <div className="card" key={shop.id}>
-                                    <div>{shop.name}</div>
-                                    <div>{shop.address}</div>
-                                    <div>{shop.city}</div>
-                                    <div>{shop.state}</div>
-                                    <div>{shop.zipcode}</div>
-                                    <Link
-                                        to={`coffeeshop/${shop.id}`}
-                                        className="button is-warning"
-                                    >
-                                        See Homepage
-                </Link>
-                                </div>
-                            );
-                        })}
-                </div>
+            </div>
         </div>
     );
 };

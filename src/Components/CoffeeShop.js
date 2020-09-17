@@ -155,7 +155,7 @@ const CoffeeShop = (props) => {
         <div className="tile is-ancestor">
   <div className="tile is-parent">
     <article className="tile is-child box">
-      <p className="title">{coffeeShopData.name}</p>
+      <div className="title">{coffeeShopData.name}</div>
       <p className
       ="subtitle">{coffeeShopData.address}, {coffeeShopData.city}, {coffeeShopData.state} {coffeeShopData.zipcode}</p>
       <hr></hr>
