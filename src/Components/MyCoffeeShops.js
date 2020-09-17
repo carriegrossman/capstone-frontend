@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Users from "./Users";
 
 const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   const [myShops, setMyShops] = useState(undefined);
@@ -51,7 +52,6 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
                 );
               })}
           </div>
-          <div className="tile is-child box">Testing</div>
         </div>
       </div>
     </div>
