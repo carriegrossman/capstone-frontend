@@ -248,13 +248,9 @@ hr {
   width: auto;
 }
 
-.button,
-.field,
-.titel,
-.subtitle,
-label {
-  font-family: "Poppins", sans-serif;
-  color: rgb(135, 103, 78);
+.button, .field,.title, .subtitle, label{
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78)
 }
 
 .carditem {
