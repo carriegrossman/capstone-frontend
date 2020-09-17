@@ -377,6 +377,7 @@ const CoffeeShop = (props) => {
                     required
                     onChange={handleChange}
                   />
+                  <p class="help">1 = Bad and 5 = AMAZING!</p>
                 </div>
               </div>
 
