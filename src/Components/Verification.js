@@ -25,7 +25,7 @@ const Verification = () => {
                         </div>
                     </label>
                     <Link className="button"to="/registerowner">Submit</Link>
-                    <div>Mean to register as User?</div>
+                    <div>Meant to register as User?</div>
                 <Link className="button" to="/register">Click Here!</Link>
                 </form>
                 </div>  
