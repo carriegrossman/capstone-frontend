@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MyRewards from "./MyRewards"
+import locationImg from "../images/location.png";
+
 
 const MyVisits = ({ currentUser }) => {
   const [myVisits, setMyVisits] = useState(undefined);
@@ -48,6 +50,7 @@ const MyVisits = ({ currentUser }) => {
             return (
               <div className="card" key={visit.id}>
                 <div className="subtitle">{visit.store.name}</div>
+                <img className="icon" src={locationImg} alt="shopicon" />
                 <div>{visit.stamps} Visits</div>
               </div>
             );

@@ -5,7 +5,7 @@ import locationImg from "../images/location.png";
 const Search = ({ currentUser }) => {
     const [currentShops, setCurrentShops] = useState(undefined);
     const [currentSearch, setCurrentSearch] = useState(undefined);
-    const [formData, setFormData] = useState(undefined)
+    const [formData, setFormData] = useState("")
     useEffect(() => {
         fetch("http://localhost:5000/find", {
             method: "GET",
@@ -27,7 +27,7 @@ const Search = ({ currentUser }) => {
         e.preventDefault();
         e.stopPropagation();
         setCurrentSearch(undefined)
-        setFormData(undefined)
+        setFormData("")
     }
     console.log({ currentSearch })
 
@@ -46,13 +46,13 @@ const Search = ({ currentUser }) => {
             <h2 className="title">Shops in my Area</h2>
             <form onSubmit={handleSubmit}>
                 <label>Zipcode</label>
-                <input className="input" type="text" placeholder="Enter Zipcode" onChange={handleChange} />
+                <input className="input" type="text" value={formData} placeholder="Enter Zipcode" onChange={handleChange} />
                 <div className="field is-grouped">
                     <div className="control">
                         <button className="button" type="submit">Search</button>
                     </div>
                     <div className="control">
-                        <button className="button" type="reset" onClick={Reset}>Reset</button>
+                        <button className="button" onClick={Reset}>Reset</button>
                     </div>
                 </div>
             </form>
