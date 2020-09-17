@@ -58,13 +58,15 @@ const MyRewards = ({ currentUser }) => {
     setMyRewards(addUpdate);
   };
 
-  if (myRewards) console.log(myRewards)
+  if (myRewards) console.log(myRewards);
   return (
-    <div className="rewardcontainer">
+    <div className="loginForm1">
       <h2 className="title">Your Rewards</h2>
       <hr></hr>
       {!myRewards && <div>You don't have any rewards yet!</div>}
-      {myRewards && myRewards.length===0 && <div>You don't have any rewards yet!</div>}
+      {myRewards && myRewards.length === 0 && (
+        <div>You don't have any rewards yet!</div>
+      )}
       <div className="container">
         {myRewards &&
           myRewards
@@ -72,7 +74,7 @@ const MyRewards = ({ currentUser }) => {
             .map((reward) => {
               return (
                 <div className="card" key={reward.id}>
-                  {reward.rewards} reward to: 
+                  {reward.rewards} reward to:
                   <div className="subtitle">{reward.store.name}</div>
                   <button
                     className="button"
