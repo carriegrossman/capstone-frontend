@@ -104,15 +104,6 @@ input {
 
 /* passport css starts here */
 
-.passportContainer {
-  background-color: white;
-  display: flex;
-  margin-left: 200px;
-  width: 900px;
-  height: 900px;
-  vertical-align: baseline;
-}
-
 .coffeeshop {
   margin: 10px;
 }
@@ -242,11 +233,23 @@ hr {
 }
 
 .footer {
+  background-color: rgb(245, 245, 239);
   height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.footer h2,
+h3 {
   text-align: center;
-  background-color:rgba(245,245,239);
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78);
+  font-size: 1rem;
+  padding-top: 1rem;
+  word-spacing: inherit;
+  line-height: 0.4em;
+  left: -0.37em;
+}
+.footer-center {
+  display: flex;
+  justify-content: center;
 }
 
 .homebanner {
