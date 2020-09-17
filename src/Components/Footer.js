@@ -1,10 +1,11 @@
 import React from "react";
 export default function Footer() {
   return (
-    <div className="footer-center footer">
-      <div className="footer-center">
-        <h2>Hello can you see me </h2>
-      </div>
+    <div className='footer'>
+      
+      <h3> Brewsy 2020 © | Contact us at: info@brewsy.com</h3>
+      <div> Priyanka Farrell | Frida Garcia | Carrie Grossman</div>
+   
     </div>
   );
 }
