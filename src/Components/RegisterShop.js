@@ -33,8 +33,8 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
 
     return (<div>
         <h3>Welcome {currentUser.username}, Let's get your coffeeshop set up!</h3>
-        <div className="registerForm">
-        <form className="registerForm1" onSubmit={handleSubmit}>
+        <div className="Form">
+        <form className="Form1" onSubmit={handleSubmit}>
             <h1>Set Up Your Coffee Shop</h1>
 
             <section className="section">
