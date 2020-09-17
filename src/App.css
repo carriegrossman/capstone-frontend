@@ -1,14 +1,18 @@
 html {
-  background-color: white;
+  background-color:rgba(245,245,239);
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
 }
 
 .navbar {
-  background: #b88d67;
+  background: rgba(245,245,239);
   margin: auto;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
 }
 
 .navbar-start {
@@ -29,20 +33,22 @@ h1 {
   height: 75%;
   margin: auto;
   margin-top: 20px;
-  background: #e9d5af;
+  background: rgba(204, 118, 46);
   border: 2px solid #c0c0c0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: 5px 12px;
+  padding: 30px 20px;
 }
 
 .card {
   width: 200px;
   padding: 20px;
-  height: 200px;
   margin: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
+  text-align: center;
 }
 
 .container {
@@ -64,6 +70,7 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
+  color: rgb(135,103,78);
 }
 
 /* register css starts here */
@@ -81,6 +88,7 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
+  color: rgb(135,103,78);
 }
 
 input {
@@ -90,12 +98,8 @@ input {
   border: 1px solid #dbdbdb;
   box-sizing: border-box;
   border-radius: 3px;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
 }
 
 /* passport css starts here */
@@ -140,7 +144,7 @@ h3 {
 }
 
 .star {
-  width: 20px;
+  width: 40px;
 }
 
 .stars {
@@ -149,22 +153,23 @@ h3 {
 }
 
 .reviews {
-  background-color: green;
+  background-color:white;
   display: flex;
   flex-direction: column;
   width: 400px;
   padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
 }
 
 .visitcount {
-  background-color: peru;
   padding: 30px;
-  width: 150px;
-  border-radius: 10%;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
 }
 
 .imageupload {
-  width: 400px;
+  width: 100%;
 }
 
 /* .shopimages{
@@ -198,6 +203,7 @@ title {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 5px 12px;
+  color: rgb(135,103,78);
 }
 
 button {
@@ -255,19 +261,43 @@ h3 {
   justify-content: center;
 }
 
-/* css for mycoffeeshop */
 
-.coffeeshopcontainer {
-  margin: auto;
-  margin-top: 20px;
-  width: 80%;
-  height: 75%;
-  background: rgb(232, 237, 223);
-  border: 2px solid #c0c0c0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* left: 500px; */
-  font-weight: 200;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: 5px 12px;
+.homebanner{
+  width: 100%;
 }
+
+.banner {
+  width: 100%;
+}
+
+.logo{
+  height: 100px;
+  width: auto;
+}
+
+.button, .field, .titel, .subtitle, label{
+  font-family: 'Poppins', sans-serif;
+  color: rgb(135,103,78);
+}
+
+.carditem{
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(135,103,78);
+  justify-content: space-evenly;
+  object-position: bottom;
+}
+
+.icon{
+  width: 60px;
+  height: 60px;
+}
+
+.trial{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin: 8px 0px;
+  align-content: center
+}
+

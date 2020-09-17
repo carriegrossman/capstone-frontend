@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "./images/brewsy1.png";
+import homebanner from "./images/homebanner.png"
 
 import {
   BrowserRouter as Router,
@@ -29,7 +30,6 @@ import About from "./Components/About"
 //
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
-  // const [currentSearch, setCurrentSearch] = useState(undefined)
   const [currentShop, setCurrentShop] = useState(undefined);
   const logOut = () => {
     setCurrentUser(undefined);
@@ -74,11 +74,11 @@ function App() {
               <Link className="navbar-item" to="/search">
                 Search
               </Link>
-              <Link className="navbar-item" to="/myrewards">
+              {/* <Link className="navbar-item" to="/myrewards">
                 My Rewards
-              </Link>
+              </Link> */}
               <Link className="navbar-item" to="/myvisits">
-                My Visits
+                My Visits and Rewards
               </Link>
             </React.Fragment>
           )}
@@ -101,6 +101,9 @@ function App() {
         </div>
       </nav>
       <Switch>
+      <Route exact path="/">
+      <img src={homebanner} className="homebanner" alt ="homebanner" />
+      </Route>
         <Route path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
           {currentUser && !currentUser.owner && <Redirect to="/search" />}
@@ -120,12 +123,13 @@ function App() {
         <Route path="/registerowner">
           <RegisterOwner setCurrentUser={setCurrentUser} />
         </Route>
-        <Route path="/registershop">
-          <RegisterShop
+        <ProtectedRoute path="/registershop" setCurrentUser={setCurrentUser} currentUser={currentUser} component={RegisterShop}/>
+          {/* <RegisterShop
             setCurrentUser={setCurrentUser}
             currentUser={currentUser}
-          />
-        </Route>
+          /> */}
+           {/* <Redirect to="/mycoffeeshops" /> */}
+        {/* </Route> */}
 
         <ProtectedRoute
           path="/coffeeshop/:id"
@@ -145,7 +149,6 @@ function App() {
         <ProtectedRoute
           path="/mycoffeeshops"
           currentUser={currentUser}
-          currentShop={currentShop}
           setCurrentShop={setCurrentShop}
           component={MyCoffeeShops}
         />
@@ -157,7 +160,6 @@ function App() {
         <ProtectedRoute
           path="/myrewards"
           currentUser={currentUser}
-          currentShop={currentShop}
           component={MyRewards}
         />
       </Switch>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Users from "./Users";
+import locationImg from "../images/location.png";
+import stampImg from "../images/stamp.png";
+import shopImg from "../images/shop.png";
 
 const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   const [myShops, setMyShops] = useState(undefined);
@@ -20,38 +22,45 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   }, [currentUser]);
 
   return (
-    <div className="coffeeshopcontainer">
-      <div className="tile is-ancestor">
-        <div>
-          <h2 className="title tile is-parent">My CoffeeShops</h2>
-          <Link className="button" to="/registershop">
-            Register Shop
-          </Link>
-          <hr></hr>
-          <div className="container tile is-child box">
-            {myShops &&
-              myShops.map((shop) => {
-                return (
-                  <div className="card" key={shop.id}>
-                    <div>{shop.name}</div>
-                    <div>{shop.address}</div>
-                    <div>{shop.state}</div>
+    <div>
+      <div className="coffeeshopcontainer">
+        <h2 className="title">My CoffeeShops</h2>
+        <Link className="button" to="/registershop">
+          Register Shop
+              </Link>
+        <hr></hr>
+        <div className="container">
+          {myShops &&
+            myShops.map((shop) => {
+              return (
+                <div className="card" key={shop.id}>
+                  <div className = "subtitle">{shop.name}</div>
+                  {/* <div>{shop.address}</div>
+                  <div>{shop.city}</div>
+                  <div>{shop.state}</div>
+                  <div>{shop.zipcode}</div>
+                 */}
+                  <div className='carditem'>
                     <Link
                       to={`/${shop.id}/users`}
                       onClick={() => {
                         setCurrentShop(shop.id);
                       }}
-                      className="button"
+                      className="trial"
                     >
-                      Find User to Stamp
-                    </Link>
-                    <Link to={`coffeeshop/${shop.id}`} className="button">
-                      See Homepage{" "}
+                       <img className="icon" src={stampImg} alt="shopicon" />
+                       <div>Stamp</div>
+                  </Link>
+                  {/* </div>
+                  <div className='carditem'> */}
+                    <Link to={`coffeeshop/${shop.id}`} className="trial">
+                    <img className="icon" src={locationImg} alt="shopicon" />
+                    <div>Home</div>
                     </Link>
                   </div>
-                );
-              })}
-          </div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>
