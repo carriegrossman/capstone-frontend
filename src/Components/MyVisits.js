@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MyRewards from "./MyRewards"
 
 const MyVisits = ({ currentUser }) => {
   const [myVisits, setMyVisits] = useState(undefined);
@@ -35,6 +36,7 @@ const MyVisits = ({ currentUser }) => {
   }, [currentUser]);
 
   return (
+    <div>
     <div className="visitcontainer">
       <h2 className="title">My Visits</h2>
       <hr></hr>
@@ -45,12 +47,14 @@ const MyVisits = ({ currentUser }) => {
           myVisits.map((visit) => {
             return (
               <div className="card" key={visit.id}>
-                <div>{visit.store.name}</div>
+                <div className="subtitle">{visit.store.name}</div>
                 <div>{visit.stamps} Visits</div>
               </div>
             );
           })}
       </div>
+      </div>
+      <MyRewards currentUser={currentUser}/>
     </div>
   );
 };

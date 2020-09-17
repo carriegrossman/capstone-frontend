@@ -69,7 +69,8 @@ const Users = (props) => {
                         <div className="card" key={user.id}>
                             <div>{user.username}</div>
                             <div>{user.zipcode}</div>
-                            <button onClick={() => handleStamp(user.id)}>Stamp</button>
+                            <br></br>
+                            <button className = "button" onClick={() => handleStamp(user.id)}>Stamp</button>
                             <div>{user.visits.stamps} Stamps</div>
                             {/* {visits && visits[id] && <div>{visits[id].stamps} Stamps</div>} */}
                         </div >

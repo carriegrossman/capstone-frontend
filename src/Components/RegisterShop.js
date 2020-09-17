@@ -13,7 +13,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
         evt.preventDefault()
         const sendingData = { ...formData, "id": currentUser.id }
         console.log(sendingData)
-        fetch("http://localhost:5000/registershop", {
+        fetch("http://xlhost:5000/registershop", {
             method: 'POST',
             body: JSON.stringify(sendingData),
             headers: {
@@ -30,7 +30,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
     }
 
     if (currentShop) return (<Redirect to="/mycoffeeshops" />)
-    
+
     return (<div>
         <h3>Welcome {currentUser.username}, Let's get your coffeeshop set up!</h3>
         <div className="registerForm">

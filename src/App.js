@@ -74,11 +74,11 @@ function App() {
               <Link className="navbar-item" to="/search">
                 Search
               </Link>
-              <Link className="navbar-item" to="/myrewards">
+              {/* <Link className="navbar-item" to="/myrewards">
                 My Rewards
-              </Link>
+              </Link> */}
               <Link className="navbar-item" to="/myvisits">
-                My Visits
+                My Visits and Rewards
               </Link>
             </React.Fragment>
           )}

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import locationImg from "../images/location.png";
+import stampImg from "../images/stamp.png";
+import shopImg from "../images/shop.png";
 
 const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   const [myShops, setMyShops] = useState(undefined);
@@ -23,7 +26,7 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
       <div className="coffeeshopcontainer">
         <h2 className="title">My CoffeeShops</h2>
         <Link className="button" to="/registershop">
-                Register Shop
+          Register Shop
               </Link>
         <hr></hr>
         <div className="container">
@@ -31,21 +34,30 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
             myShops.map((shop) => {
               return (
                 <div className="card" key={shop.id}>
-                  <div>{shop.name}</div>
-                  <div>{shop.address}</div>
+                  <div className = "subtitle">{shop.name}</div>
+                  {/* <div>{shop.address}</div>
+                  <div>{shop.city}</div>
                   <div>{shop.state}</div>
-                  <Link
-                    to={`/${shop.id}/users`}
-                    onClick={() => {
-                      setCurrentShop(shop.id);
-                    }}
-                    className="button"
-                  >
-                    Find User to Stamp
+                  <div>{shop.zipcode}</div>
+                 */}
+                  <div className='carditem'>
+                    <Link
+                      to={`/${shop.id}/users`}
+                      onClick={() => {
+                        setCurrentShop(shop.id);
+                      }}
+                      className="trial"
+                    >
+                       <img className="icon" src={stampImg} alt="shopicon" />
+                       <div>Stamp</div>
                   </Link>
-                  <Link to={`coffeeshop/${shop.id}`} className="button">
-                    See Homepage{" "}
-                  </Link>
+                  {/* </div>
+                  <div className='carditem'> */}
+                    <Link to={`coffeeshop/${shop.id}`} className="trial">
+                    <img className="icon" src={locationImg} alt="shopicon" />
+                    <div>Home</div>
+                    </Link>
+                  </div>
                 </div>
               );
             })}
