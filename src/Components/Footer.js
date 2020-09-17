@@ -3,7 +3,7 @@ export default function Footer() {
   return (
     <div className="footer-center footer">
       <div className="footer-center">
-        <h2>Hello can you see me </h2>
+        <h3> Contact us at: info@brewsy.com</h3>
       </div>
     </div>
   );
