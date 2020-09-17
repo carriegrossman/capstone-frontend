@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react"
+import userImg from "../images/User.png";
+
 
 const Users = (props) => {
     const [users, setUsers] = useState(undefined)
+    const [currentSearch, setCurrentSearch] = useState(undefined);
+    const [formData, setFormData] = useState("")
 
     useEffect(() => {
 
@@ -60,15 +64,47 @@ const Users = (props) => {
         }
     }
 
+    const handleChange = (evt) => {
+        setFormData(evt.target.value)
+    }
+
+    const Reset = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setCurrentSearch(undefined)
+        setFormData("")
+    }
+    console.log({ currentSearch })
+
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault()
+        let filtered = users.filter((user) => user.username === formData);
+        setCurrentSearch(filtered)
+    }
+
     return (
-        <div>
+        <div className="loginForm1">
             <h2 className="title">Users</h2>
+            <form onSubmit={handleSubmit}>
+                <label>Enter Username</label>
+                <input className="input" type="text" value={formData} placeholder="Enter Username" onChange={handleChange} />
+                <div className="field is-grouped">
+                    <div className="control">
+                        <button className="button" type="submit">Search</button>
+                    </div>
+                    <div className="control">
+                        <button className="button" onClick={Reset}>Reset</button>
+                    </div>
+                </div>
+            </form>
             <div className="container">
-                {users && users.map(user => {
+                {currentSearch && currentSearch.map(user => {
                     return (
                         <div className="card" key={user.id}>
                             <div>{user.username}</div>
                             <div>{user.zipcode}</div>
+                            <img className="icon" src={userImg} alt="shopicon" />
                             <br></br>
                             <button className = "button" onClick={() => handleStamp(user.id)}>Stamp</button>
                             <div>{user.visits.stamps} Stamps</div>
