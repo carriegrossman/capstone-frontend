@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import homebanner from "./images/homebanner.png"
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,26 +28,23 @@ import About from "./Components/About"
 import Nav from "./Components/Nav"
 
 
-
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [currentShop, setCurrentShop] = useState(undefined);
-  
 
   return (
     <Router>
       <Nav currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-      
       <Switch>
-      <Route exact path="/">
-      <img src={homebanner} className="homebanner" alt ="homebanner" />
-      </Route>
+        <Route exact path="/">
+          <img src={homebanner} className="homebanner" alt="homebanner" />
+        </Route>
         <Route path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
           {currentUser && !currentUser.owner && <Redirect to="/search" />}
           {currentUser && currentUser.owner && <Redirect to="/mycoffeeshops" />}
         </Route>
-        <Route path="/about" >
+        <Route path="/about">
           <About />
         </Route>
         <Route path="/register">

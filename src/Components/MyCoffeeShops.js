@@ -22,25 +22,20 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   }, [currentUser]);
 
   return (
-    <div>
+    <div className="loginForm1">
       <div className="coffeeshopcontainer">
         <h2 className="title">My Coffee Shops</h2>
+        <hr></hr>
         <Link className="button" to="/registershop">
           Register Shop
-              </Link>
-        <hr></hr>
+        </Link>
         <div className="container">
           {myShops &&
             myShops.map((shop) => {
               return (
                 <div className="card" key={shop.id}>
-                  <div className = "subtitle">{shop.name}</div>
-                  {/* <div>{shop.address}</div>
-                  <div>{shop.city}</div>
-                  <div>{shop.state}</div>
-                  <div>{shop.zipcode}</div>
-                 */}
-                  <div className='carditem'>
+                  <div className="subtitle">{shop.name}</div>
+                  <div className="carditem">
                     <Link
                       to={`/${shop.id}/users`}
                       onClick={() => {
@@ -48,14 +43,14 @@ const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
                       }}
                       className="trial"
                     >
-                       <img className="icon" src={stampImg} alt="shopicon" />
-                       <div>Stamp</div>
-                  </Link>
-                  {/* </div>
+                      <img className="icon" src={stampImg} alt="shopicon" />
+                      <div>Stamp</div>
+                    </Link>
+                    {/* </div>
                   <div className='carditem'> */}
                     <Link to={`coffeeshop/${shop.id}`} className="trial">
-                    <img className="icon" src={locationImg} alt="shopicon" />
-                    <div>Home</div>
+                      <img className="icon" src={locationImg} alt="shopicon" />
+                      <div>Home</div>
                     </Link>
                   </div>
                 </div>
