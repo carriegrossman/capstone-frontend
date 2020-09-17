@@ -38,11 +38,25 @@ const Search = ({ currentUser }) => {
         setCurrentSearch(filtered)
     }
 
+  const Reset = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentSearch(undefined);
+    setFormData(undefined);
+  };
+  console.log({ currentSearch });
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    let filtered = currentShops.filter(
+      (shop) => shop.zipcode === Number(formData)
+    );
+    setCurrentSearch(filtered);
+  };
 
     if (currentSearch) console.log(currentSearch)
     return (
-        <div>
+        <div className="loginForm1">
             <h2 className="title">Shops in my Area</h2>
             <form onSubmit={handleSubmit}>
                 <label>Zipcode</label>
@@ -96,7 +110,52 @@ const Search = ({ currentUser }) => {
                     })}
             </div>
         </div>
-    );
+      </form>
+      <div className="container">
+        {currentSearch && currentSearch.length === 0 && (
+          <div>Sorry no coffeeshops found with that zipcode!</div>
+        )}
+        {currentSearch &&
+          currentSearch.length !== 0 &&
+          currentSearch.map((shop) => {
+            return (
+              <div className="card" key={shop.id}>
+                <div className="subtitle">{shop.name}</div>
+                <div>{shop.address}</div>
+                <div>{shop.city}</div>
+                <div>{shop.state}</div>
+                <div>{shop.zipcode}</div>
+                <div className="carditem">
+                  <Link to={`coffeeshop/${shop.id}`} className="trial">
+                    <img className="icon" src={locationImg} alt="shopicon" />
+                    <div>Home</div>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        {!currentSearch &&
+          currentShops &&
+          currentShops.map((shop) => {
+            return (
+              <div className="card" key={shop.id}>
+                <div className="subtitle">{shop.name}</div>
+                <div>{shop.address}</div>
+                <div>{shop.city}</div>
+                <div>{shop.state}</div>
+                <div>{shop.zipcode}</div>
+                <div className="carditem">
+                  <Link to={`coffeeshop/${shop.id}`} className="trial">
+                    <img className="icon" src={locationImg} alt="shopicon" />
+                    <div>Home</div>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+  );
 };
 
 export default Search;
