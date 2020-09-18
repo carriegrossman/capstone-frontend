@@ -13,7 +13,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
     evt.preventDefault();
     const sendingData = { ...formData, id: currentUser.id };
     console.log(sendingData);
-    fetch("http://localhost:5000/registershop", {
+    fetch("/registershop", {
       method: "POST",
       body: JSON.stringify(sendingData),
       headers: {

@@ -11,7 +11,7 @@ const Users = (props) => {
 
         const fetchUsersAndVisits = async () => {
 
-            let fetchUsers = await fetch("http://localhost:5000/findusers", {
+            let fetchUsers = await fetch("/findusers", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -20,7 +20,7 @@ const Users = (props) => {
             let fetchUsersAsJSON = await fetchUsers.json()
 
             for (let i = 0; i < fetchUsersAsJSON.length; i++) {
-                let fetchStamp = await fetch("http://localhost:5000/getstamps", {
+                let fetchStamp = await fetch("/getstamps", {
                     method: 'POST',
                     body: JSON.stringify({"visitor_id": fetchUsersAsJSON[i].id, "coffeeshop_id": Number(props.match.params.id)}),
                     headers: {
@@ -46,7 +46,7 @@ const Users = (props) => {
             "visitor_id": user_id
         }
 
-        let stamp = await fetch("http://localhost:5000/stamp", {
+        let stamp = await fetch("/stamp", {
             method: 'POST',
             body: JSON.stringify(receipt),
             headers: {

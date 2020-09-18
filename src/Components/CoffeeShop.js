@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ImageUpload from "./ImageUpload";
 import ReviewStars from "./ReviewStars";
 import pinkcup from "../images/pinkcup2.png";
+import url from '../config'
 const CoffeeShop = (props) => {
   const [coffeeShopData, setCoffeeShopData] = useState(null);
   const [formData, setFormData] = useState({});
@@ -11,7 +12,7 @@ const CoffeeShop = (props) => {
   const [updateFormData, setUpdateFormData] = useState(undefined);
   const [updates, setUpdates] = useState(undefined);
   useEffect(() => {
-    fetch("http://localhost:5000/getvisits", {
+    fetch("/getvisits", {
       method: "POST",
       body: JSON.stringify({ coffeeshop_id: props.match.params.id }),
       headers: {
@@ -39,7 +40,7 @@ const CoffeeShop = (props) => {
       });
   }, [props.match.id, props.match.params.id]);
   useEffect(() => {
-    fetch("http://localhost:5000/getreviews", {
+    fetch("/getreviews", {
       method: "POST",
       body: JSON.stringify({ coffeeshop_id: props.match.params.id }),
       headers: {
@@ -52,7 +53,7 @@ const CoffeeShop = (props) => {
       });
   }, [props.match.params.id]);
   useEffect(() => {
-    fetch("http://localhost:5000/getupdates", {
+    fetch("/getupdates", {
       method: "POST",
       body: JSON.stringify({ coffeeshop_id: props.match.params.id }),
       headers: {
@@ -65,7 +66,7 @@ const CoffeeShop = (props) => {
       });
   }, [props.match.params.id]);
   useEffect(() => {
-    fetch("http://localhost:5000/getphotos", {
+    fetch("/getphotos", {
       method: "POST",
       body: JSON.stringify({ coffeeshop_id: props.match.params.id }),
       headers: {
@@ -85,7 +86,7 @@ const CoffeeShop = (props) => {
       coffeeshop_id: Number(props.match.params.id),
       visitor_id: props.currentUser.id,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("/reviews", {
       method: "POST",
       body: JSON.stringify(sendingData),
       headers: {
@@ -122,7 +123,7 @@ const CoffeeShop = (props) => {
       ...updateFormData,
       coffeeshop_id: Number(props.match.params.id),
     };
-    fetch("http://localhost:5000/addupdate", {
+    fetch("/addupdate", {
       method: "POST",
       body: JSON.stringify(sendingData),
       headers: {

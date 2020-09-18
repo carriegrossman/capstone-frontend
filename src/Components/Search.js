@@ -6,7 +6,7 @@ const Search = ({ currentUser }) => {
   const [currentSearch, setCurrentSearch] = useState(undefined);
   const [formData, setFormData] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/find", {
+    fetch("/find", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

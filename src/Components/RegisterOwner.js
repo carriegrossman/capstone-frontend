@@ -10,7 +10,7 @@ function RegisterOwner({setCurrentUser}) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        fetch("http://localhost:5000/registerowner", {
+        fetch("/registerowner", {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {

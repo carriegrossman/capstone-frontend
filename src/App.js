@@ -57,6 +57,7 @@ function App() {
         </Route>
         <Route path="/registerowner">
           <RegisterOwner setCurrentUser={setCurrentUser} />
+          {currentUser && currentUser.owner && <Redirect to="/mycoffeeshops" />}
         </Route>
 
         <ProtectedRoute 
