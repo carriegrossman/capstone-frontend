@@ -20,6 +20,7 @@ const Verification = () => {
             <div className="verificationCode">
                 <form className="Form1">
                     <label className="label">Verification Code
+                    <hr></hr>
                     <div className="control">
                             <input className="input" type="password" placeholder="Enter code from email" name="verificationCode" id="verificationCode"  required />
                         </div>

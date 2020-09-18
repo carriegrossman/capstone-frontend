@@ -36,7 +36,7 @@ const RegisterShop = ({ currentUser, setCurrentUser }) => {
         <div className="Form">
         <form className="Form1" onSubmit={handleSubmit}>
             <h1>Set Up Your Coffee Shop</h1>
-
+            <hr></hr>
             <section className="section">
                 <label className="label">Coffee Shop Name</label>
                     <div className="control">

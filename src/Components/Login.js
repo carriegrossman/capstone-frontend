@@ -30,6 +30,7 @@ function Login({ currentUser, setCurrentUser }) {
     <div className="Form">
       <form className="Form1" onSubmit={handleSubmit}>
         <h1> Login Form</h1>
+        <hr></hr>
         <section className="section">
           <label className="label">Username</label>
           <div className="control">

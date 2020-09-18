@@ -26,7 +26,7 @@ function Register({ currentUser, setCurrentUser }) {
 <div className="Form">
     <form className="Form1" onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
-
+      <hr></hr>
       <section className="section">
         <label className="label">Username</label>
         <div className="control">

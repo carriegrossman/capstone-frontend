@@ -38,6 +38,7 @@ const Search = ({ currentUser }) => {
   return (
     <div className="loginForm1">
       <h2 className="title">Shops in my Area</h2>
+      <hr></hr>
       <form onSubmit={handleSubmit}>
         <label>Zipcode</label>
         <input
