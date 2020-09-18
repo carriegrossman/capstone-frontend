@@ -27,7 +27,7 @@ function RegisterOwner({setCurrentUser}) {
 <div className="Form">
     <form className="Form1" onSubmit={handleSubmit}>
       <h1>Register Coffee Shop Owner</h1>
-
+      <hr></hr>
       <section className="section">
         <label className="label">Username</label>
         <div className="control">

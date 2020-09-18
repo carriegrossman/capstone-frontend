@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ImageUpload from "./ImageUpload";
-import mug from "../images/mugs.png";
+import ReviewStars from "./ReviewStars";
+import pinkcup from "../images/pinkcup2.png";
 
 const CoffeeShop = (props) => {
   const [coffeeShopData, setCoffeeShopData] = useState(null);
@@ -181,65 +182,22 @@ const CoffeeShop = (props) => {
           </div>
         )}
 
+    <div className ="content">
+      {props.currentUser.owner && (
+          <figure class="image is-5by3">
+          <img src={pinkcup}></img>
+        </figure>
+        )}
+      </div>
       </div>
     </article>
   </div>
+
+  
   <div className="tile is-parent">
-
-    <article className ="tile is-child box">
-        <p className ="title">REVIEWS of {coffeeShopData.name}</p>
-      <div className ="content">
-
-      <div>
-          {!reviews && <div>No reviews written yet!</div>}
-          {reviews && reviews.length === 0 && (
-            <div>No reviews written yet!</div>
-          )}
-          {reviews &&
-            reviews.map((review) => {
-              return (
-                <div key={review.id}>
-                  <div>{review.review}</div>
-                  {review.stars === 5 && (
-                    <div className="stars">
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                    </div>
-                  )}
-                  {review.stars === 4 && (
-                    <div className="stars">
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                    </div>
-                  )}
-                  {review.stars === 3 && (
-                    <div className="stars">
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                    </div>
-                  )}
-                  {review.stars === 2 && (
-                    <div className="stars">
-                      <img src={mug} className="star" alt="star" />
-                      <img src={mug} className="star" alt="star" />
-                    </div>
-                  )}
-                  {review.stars === 1 && (
-                    <div className="stars">
-                      <img src={mug} className="star" alt="star" />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-        </div>
-      </div>
+  <article className ="tile is-child box">
+    <p className ="title">Reviews of {coffeeShopData.name}</p>
+    <ReviewStars coffeeShopData={coffeeShopData} reviews={reviews}/>
     </article>
   </div>
 </div>
@@ -286,7 +244,7 @@ const CoffeeShop = (props) => {
       <div className="container updates">
           <h2 className="subtitle"> </h2>
           {updates &&
-            updates.map((update) => {
+            updates.sort((a, b) => {return new Date(b.date) - new Date(a.date)}).map((update) => {
               return (
                 <div className="card" key={update.id}>
                   <div>{formatDate(update.date)}</div>

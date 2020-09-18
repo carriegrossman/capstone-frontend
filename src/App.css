@@ -4,6 +4,11 @@ html {
   color: rgb(135, 103, 78);
 }
 
+.reviewbox{
+  overflow-y: scroll;
+  height: 450px;
+}
+
 .navbar {
   background: rgba(245, 245, 239);
   margin: auto;
@@ -68,6 +73,10 @@ h1 {
   color: #fff9f9;
 }
 
+.abouth1{
+  color: rgb(135, 103, 78);
+}
+
 .card {
   width: 200px;
   padding: 20px;
@@ -79,6 +88,7 @@ h1 {
 
 .container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -157,6 +167,7 @@ h3 {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
 .colorline {
@@ -205,6 +216,8 @@ h3 {
 
 title {
   align-self: center;
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 .notification {
@@ -279,7 +292,7 @@ hr {
 
 .button,
 .field,
-.titel,
+.title,
 .subtitle,
 label {
   font-family: "Poppins", sans-serif;
@@ -305,4 +318,8 @@ label {
   text-decoration: none;
   margin: 8px 0px;
   align-content: center;
+}
+
+.github{
+  text-align: center;
 }
