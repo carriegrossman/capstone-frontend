@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import url from '../config'
 
 function Login({ currentUser, setCurrentUser }) {
   const [formData, setFormData] = useState({});
@@ -10,7 +11,7 @@ function Login({ currentUser, setCurrentUser }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    fetch("/login", {
+    fetch(url+"/login", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

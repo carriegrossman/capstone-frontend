@@ -11,7 +11,7 @@ function Register({ currentUser, setCurrentUser }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    fetch("/register", {
+    fetch(url+"/register", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

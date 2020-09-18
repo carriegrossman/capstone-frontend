@@ -1,1 +1,1 @@
-export default 'http://localhost:5000'
+export default 'http://3.14.189.185:5000'
