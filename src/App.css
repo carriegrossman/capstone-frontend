@@ -53,6 +53,21 @@ h1 {
   padding: 30px 20px;
 }
 
+.about {
+  text-align: center;
+  width: 80%;
+  height: 75%;
+  margin: auto;
+  margin-top: 20px;
+  background: rgba(204, 118, 46);
+  border: 2px solid #c0c0c0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  padding: 30px 20px;
+  color: #fff9f9;
+}
+
 .card {
   width: 200px;
   padding: 20px;
@@ -112,6 +127,15 @@ input {
 }
 
 /* passport css starts here */
+
+.passportContainer {
+  background-color: white;
+  display: flex;
+  margin-left: 200px;
+  width: 900px;
+  height: 900px;
+  vertical-align: baseline;
+}
 
 .coffeeshop {
   margin: 10px;
@@ -253,9 +277,13 @@ hr {
   width: auto;
 }
 
-.button, .field,.title, .subtitle, label{
-  font-family: 'Poppins', sans-serif;
-  color: rgb(135,103,78)
+.button,
+.field,
+.titel,
+.subtitle,
+label {
+  font-family: "Poppins", sans-serif;
+  color: rgb(135, 103, 78);
 }
 
 .carditem {
