@@ -3,17 +3,22 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <section className="loginform1">
+      <section className="about">
         <h1 className="title">About</h1>
+        <hr></hr>
         <h2>Welcome to Brewsy!</h2>
         <p>
           A day without coffee is like... Just kidding. We have no idea. At
-          Brewsy like big cups and we cannot lie.<br></br>Brewsy is where yelp
+          Brewsy like big cups and we cannot lie.</p>
+          <br></br>
+          <p>Brewsy is where yelp
           meets untappd but for all things coffee. This site was made with both
           coffee lovers and shop owners in mind. Shop owners can register their
           shops and reward users for visiting their shops. While users can track
           their visits and receive rewards for every ten visits to their
-          favorite spots. To begin, users must follow the instruction on the
+          favorite spots.</p>
+          <br></br>
+          <p>To begin, users must follow the instruction on the
           sign up page and register. If you’re a shop owner, follow the link at
           the bottom of the register page to sign up as an owner, and then email
           us at info@brewsy.com to get verified. Users: From login, you’ll get
@@ -24,6 +29,48 @@ export default function About() {
           the link to be directed to the shop’s homepage.{" "}
         </p>
       </section>
+      <div className='Form1'>
+      <h1 className="title">Developers:</h1>
+      <div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Carrie Grossman</p>
+      <p class="subtitle">Fav Coffee:</p>
+      <div class="content">
+        <figure class="image">
+          <img src="https://avatars2.githubusercontent.com/u/66217922?s=400&u=4f29b2e3071b8a8351c1115142fdebb5a825c7c5&v=4" alt="Carrie Grossman"></img>
+        </figure>
+        <p><a href="https://github.com/carriegrossman">GitHub</a></p>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Frida Garcia</p>
+      <p class="subtitle">Fav Coffee:</p>
+      <div class="content">
+      <figure class="image">
+          <img src="https://avatars3.githubusercontent.com/u/64746413?s=400&u=b2557388e88d2945ea789481757594174bc04f28&v=4https://avatars2.githubusercontent.com/u/66217922?s=400&u=4f29b2e3071b8a8351c1115142fdebb5a825c7c5&v=4" alt="Frida Garcia"></img>
+        </figure>
+        <p><a href="https://github.com/GarciaFrida">GitHub</a></p>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Priyanka Farrell</p>
+      <p class="subtitle">Fav Coffee:</p>
+      <div class="content">
+      <figure class="image">
+          <img src="https://avatars0.githubusercontent.com/u/66265731?s=400&u=6ae329f19970376e5d0118177f884b232bfd215d&v=4" alt="Priyanka Farrell"></img>
+        </figure>
+        <p><a href="https://github.com/pfarrell18">GitHub</a></p>
+      </div>
+    </article>
+  </div>
+</div>
+
+      </div>
     </div>
   );
 }
