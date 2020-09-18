@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import url from '../config'
 
 function Register({ currentUser, setCurrentUser }) {
   const [formData, setFormData] = useState({});
@@ -10,7 +11,7 @@ function Register({ currentUser, setCurrentUser }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    fetch("http://localhost:5000/register", {
+    fetch(url+"/register", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

@@ -2,19 +2,6 @@ import React from "react"
 import {Link} from "react-router-dom";
 
 const Verification = () => {
-    // const [verificationCode, setVerificationCode] = useState(undefined)
-
-    // // const handleChange = (evt) => {
-    // //     setVerificationCode(evt.target.value)
-    // // }
-
-    // // const handleSubmit = (evt) => {
-    // //     if (verificationCode === "coffeerocks") {
-    // //         return (<Redirect to="/registerowner" />)
-    // //     }
-
-    // // }
-
     return (
         <React.Fragment>
             <div className="verificationCode">

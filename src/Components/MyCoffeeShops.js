@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import locationImg from "../images/location.png";
 import stampImg from "../images/stamp.png";
-import shopImg from "../images/shop.png";
+
 
 const MyCoffeeShops = ({ currentUser, setCurrentShop }) => {
   const [myShops, setMyShops] = useState(undefined);
 
   useEffect(() => {
-    fetch("http://localhost:5000/myshops", {
+    fetch("/myshops", {
       method: "POST",
       body: JSON.stringify(currentUser),
       headers: {

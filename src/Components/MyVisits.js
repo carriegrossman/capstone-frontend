@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MyRewards from "./MyRewards"
-import locationImg from "../images/location.png";
+
 
 
 const MyVisits = ({ currentUser }) => {
@@ -9,7 +9,7 @@ const MyVisits = ({ currentUser }) => {
   useEffect(() => {
     let fetchshop = async () => {
       let visitor_id = { id: currentUser.id };
-      let visitfetch = await fetch("http://localhost:5000/yourvisits", {
+      let visitfetch = await fetch("/yourvisits", {
         method: "POST",
         body: JSON.stringify(visitor_id),
         headers: {
@@ -21,7 +21,7 @@ const MyVisits = ({ currentUser }) => {
 
       for (let i = 0; i < visitfetchAsJSON.length; i++) {
         let coffeeshopId = { coffeeshop_id: visitfetchAsJSON[i].coffeeshop_id };
-        let shopfetch = await fetch("http://localhost:5000/getshop", {
+        let shopfetch = await fetch("/getshop", {
           method: "POST",
           body: JSON.stringify(coffeeshopId),
           headers: {

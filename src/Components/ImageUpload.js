@@ -27,7 +27,7 @@ const ImageUpload = ({ currentShopID, setShopImages }) => {
             console.log(evt.target.result)
 
 
-            let imagefetch = await fetch("http://localhost:5000/uploadphoto", {
+            let imagefetch = await fetch("/uploadphoto", {
                 method: "POST",
                 body: JSON.stringify({ "base64": evt.target.result, "coffeeshop_id": Number(currentShopID), "caption": caption, "imgname": image.name }),
                 headers: {

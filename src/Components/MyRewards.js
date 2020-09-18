@@ -7,7 +7,7 @@ const MyRewards = ({ currentUser }) => {
   useEffect(() => {
     const fetchStoreInfo = async () => {
       let visitor_id = { id: currentUser.id };
-      let rewardsfetch = await fetch("http://localhost:5000/myrewards", {
+      let rewardsfetch = await fetch("/myrewards", {
         method: "POST",
         body: JSON.stringify(visitor_id),
         headers: {
@@ -21,7 +21,7 @@ const MyRewards = ({ currentUser }) => {
         let coffeeshopId = {
           coffeeshop_id: rewardsfetchasJSON[i].coffeeshop_id,
         };
-        let shopfetch = await fetch("http://localhost:5000/getshop", {
+        let shopfetch = await fetch("/getshop", {
           method: "POST",
           body: JSON.stringify(coffeeshopId),
           headers: {
@@ -37,7 +37,7 @@ const MyRewards = ({ currentUser }) => {
   }, [currentUser]);
 
   const handleReward = async (coffeeshop_id) => {
-    let fetchReward = await fetch("http://localhost:5000/updatereward", {
+    let fetchReward = await fetch("/updatereward", {
       method: "POST",
       body: JSON.stringify({
         id: currentUser.id,
