@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ImageUpload from "./ImageUpload";
 import ReviewStars from "./ReviewStars";
 import pinkcup from "../images/pinkcup2.png";
-
 const CoffeeShop = (props) => {
   const [coffeeShopData, setCoffeeShopData] = useState(null);
   const [formData, setFormData] = useState({});
@@ -11,7 +10,6 @@ const CoffeeShop = (props) => {
   const [shopImages, setShopImages] = useState(undefined);
   const [updateFormData, setUpdateFormData] = useState(undefined);
   const [updates, setUpdates] = useState(undefined);
-
   useEffect(() => {
     fetch("http://localhost:5000/getvisits", {
       method: "POST",
@@ -33,7 +31,6 @@ const CoffeeShop = (props) => {
         }
       });
   }, [props.match.params.id]);
-
   useEffect(() => {
     fetch(`/coffeeshop/${props.match.params.id}`)
       .then((res) => res.json())
@@ -41,7 +38,6 @@ const CoffeeShop = (props) => {
         setCoffeeShopData(data);
       });
   }, [props.match.id, props.match.params.id]);
-
   useEffect(() => {
     fetch("http://localhost:5000/getreviews", {
       method: "POST",
@@ -55,7 +51,6 @@ const CoffeeShop = (props) => {
         setReviews(data);
       });
   }, [props.match.params.id]);
-
   useEffect(() => {
     fetch("http://localhost:5000/getupdates", {
       method: "POST",
@@ -69,7 +64,6 @@ const CoffeeShop = (props) => {
         setUpdates(data);
       });
   }, [props.match.params.id]);
-
   useEffect(() => {
     fetch("http://localhost:5000/getphotos", {
       method: "POST",
@@ -84,8 +78,6 @@ const CoffeeShop = (props) => {
         console.log(data);
       });
   }, [props.match.params.id]);
-
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const sendingData = {
@@ -105,14 +97,12 @@ const CoffeeShop = (props) => {
         setReviews(data);
       });
   };
-
   const handleUpdateChange = (evt) => {
     setUpdateFormData({
       ...updateFormData,
       [evt.target.name]: evt.target.value,
     });
   };
-
     const formatDate = (date) => {
         let split = date.split("")
         if (split[5]==="0"){
@@ -126,8 +116,6 @@ const CoffeeShop = (props) => {
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value })
     }
-
-
   const handleUpdateSubmit = (evt) => {
     evt.preventDefault();
     const sendingData = {
@@ -146,10 +134,7 @@ const CoffeeShop = (props) => {
         setUpdates(data);
       });
   };
-
-
   if (!coffeeShopData) return <div>loading...</div>;
-
   return (
     <div className="loginForm1">
         <div key={coffeeShopData.id}>
@@ -170,7 +155,6 @@ const CoffeeShop = (props) => {
         )}
       </div>
             <hr></hr>
-
       <div className ="content">
       {!props.currentUser.owner && (
           <div className="imageupload">
@@ -181,19 +165,16 @@ const CoffeeShop = (props) => {
             />
           </div>
         )}
-
     <div className ="content">
       {props.currentUser.owner && (
           <figure class="image is-5by3">
-          <img src={pinkcup}></img>
+          <img src={pinkcup} alt="pinkcup"/>
         </figure>
         )}
       </div>
       </div>
     </article>
   </div>
-
-  
   <div className="tile is-parent">
   <article className ="tile is-child box">
     <p className ="title">Reviews of {coffeeShopData.name}</p>
@@ -201,8 +182,6 @@ const CoffeeShop = (props) => {
     </article>
   </div>
 </div>
-
-
 <div className="tile is-ancestor">
   <div className="tile is-parent">
     <article className="tile is-child box">
@@ -229,12 +208,6 @@ const CoffeeShop = (props) => {
     </article>
   </div>
 </div>
-
-        
-
-        
-
-
 <div className="tile is-ancestor">
   <div className="tile is-parent">
     <article className="tile is-child box">
@@ -257,8 +230,6 @@ const CoffeeShop = (props) => {
     </article>
   </div>
 </div>
-
-        
         {props.currentUser.id === coffeeShopData.owner_id && (
         <div className="tile is-ancestor">
         <div className="tile is-parent">
@@ -280,7 +251,6 @@ const CoffeeShop = (props) => {
                   />
                 </div>
               </div>
-
               <div className="field">
                 <label className="label">Update</label>
                 <div className="control">
@@ -295,7 +265,6 @@ const CoffeeShop = (props) => {
                   />
                 </div>
               </div>
-
               <div className="field is-grouped">
                 <div className="control">
                   <button className="button" type="submit" id="register-button">
@@ -314,8 +283,6 @@ const CoffeeShop = (props) => {
           </div>
           </div>
         )}
-
-        
         {!props.currentUser.owner && (
         <div className="tile is-ancestor">
         <div className="tile is-parent">
@@ -338,7 +305,6 @@ const CoffeeShop = (props) => {
                   <p class="help">1 = Bad and 5 = AMAZING!</p>
                 </div>
               </div>
-
               <div className="field">
                 <label className="label">Review</label>
                 <div className="control">
@@ -353,7 +319,6 @@ const CoffeeShop = (props) => {
                   />
                 </div>
               </div>
-
               <div className="field is-grouped">
                 <div className="control">
                   <button className="button" type="submit" id="register-button">
@@ -376,5 +341,4 @@ const CoffeeShop = (props) => {
     </div>
   );
 };
-
 export default CoffeeShop;
