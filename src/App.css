@@ -9,6 +9,16 @@ html {
   height: 450px;
 }
 
+.imagebox{
+  overflow-y: scroll;
+  height: 250px;
+}
+
+.updatebox{
+  overflow-y: scroll;
+  height: 220px;
+}
+
 .navbar {
   background: rgba(245, 245, 239);
   margin: auto;
@@ -323,3 +333,4 @@ label {
 .github{
   text-align: center;
 }
+

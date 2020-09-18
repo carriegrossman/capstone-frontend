@@ -187,6 +187,7 @@ const CoffeeShop = (props) => {
     <article className="tile is-child box">
       <p className="title">Pictures</p>
       <p className="subtitle">Hello there, how do you brew?</p>
+      <div className = "imagebox">
       <div className="content">
         <div className="container">
           {shopImages &&
@@ -205,6 +206,7 @@ const CoffeeShop = (props) => {
             })}
         </div>
       </div>
+      </div>
     </article>
   </div>
 </div>
@@ -213,6 +215,7 @@ const CoffeeShop = (props) => {
     <article className="tile is-child box">
       <p className="title">{coffeeShopData.name} Updates</p>
       <p className="subtitle">Here's the biz....</p>
+      <div className = "updatebox">
       <div className="content">
       <div className="container updates">
           <h2 className="subtitle"> </h2>
@@ -226,6 +229,7 @@ const CoffeeShop = (props) => {
               );
             })}
         </div>
+      </div>
       </div>
     </article>
   </div>
