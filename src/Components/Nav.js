@@ -40,9 +40,11 @@ export default function Nav({currentUser, setCurrentUser}) {
               <Link className="navbar-item" to="/search">
                 Search
               </Link>
+              {currentUser && !currentUser.owner && (
               <Link className="navbar-item" to="/myvisits">
                 My Visits and Rewards
               </Link>
+              )}
             </React.Fragment>
           )}
 

@@ -86,6 +86,7 @@ const Users = (props) => {
     return (
         <div className="loginForm1">
             <h2 className="title">Users</h2>
+            <hr></hr>
             <form onSubmit={handleSubmit}>
                 <label>Enter Username</label>
                 <input className="input" type="text" value={formData} placeholder="Enter Username" onChange={handleChange} />
