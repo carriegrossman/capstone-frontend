@@ -28,4 +28,5 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 
 # <a name="demo"></a>Demo
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/videos/Screen%20Recording%202020-09-19%20at%204.38.26%20PM.mov "Demo 1")
+
