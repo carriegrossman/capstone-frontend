@@ -1,4 +1,6 @@
+![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/brewsy1.png?raw=true "Brewsy")
 # Welcome To Brewsy!
+
 
 Brewsy is where yelp meets untappd but for all things coffee. This site was made with both coffee lovers and shop owners in mind. Shop owners can register their shops and reward users for visiting their shops. While users can track their visits and receive rewards for every ten visits to their favorite spots.
 
@@ -27,3 +29,4 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 * Bulma.io
 
 # <a name="demo"></a>Demo
+![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/Screen%20Shot%202020-09-19%20at%204.28.51%20PM.png?raw=true "HomePage")
