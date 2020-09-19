@@ -11,9 +11,9 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 
 
 # <a name="the-team"></a>The Team
-* Carrie Grossman: https://github.com/carriegrossman
-* Priyanka Farrell: https://github.com/pfarrell18
-* Frida Garcia: https://github.com/GarciaFrida
+### Carrie Grossman: https://github.com/carriegrossman
+### Priyanka Farrell: https://github.com/pfarrell18
+### Frida Garcia: https://github.com/GarciaFrida
 
 # <a name="what-we-used"></a>What we used:
 ### Languages:
