@@ -32,7 +32,7 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 * bcrypt
 
 # <a name="user-flow"></a>User Flow:
-![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/Screen%20Shot%202020-09-19%20at%204.28.51%20PM.png?raw=true "HomePage")
+![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/userflow.png?raw=true "HomePage")
 
 # <a name="demo"></a>Demo
 ![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/Screen%20Shot%202020-09-19%20at%204.28.51%20PM.png?raw=true "HomePage")
