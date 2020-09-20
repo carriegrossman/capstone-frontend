@@ -7,6 +7,7 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 # Table of Contents
 * [The Team](#the-team)
 * [What we used](#what-we-used)
+* [User Flow ](#user-flow)
 * [Demo](#demo)
 
 
@@ -27,6 +28,11 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 * Passport
 * ES6 Templates
 * Bulma.io
+* React Router DOM
+* bcrypt
+
+# <a name="user-flow"></a>User Flow:
+![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/Screen%20Shot%202020-09-19%20at%204.28.51%20PM.png?raw=true "HomePage")
 
 # <a name="demo"></a>Demo
 ![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/Screen%20Shot%202020-09-19%20at%204.28.51%20PM.png?raw=true "HomePage")
