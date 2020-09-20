@@ -9,6 +9,7 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 * [What we used](#what-we-used)
 * [User Flow ](#user-flow)
 * [Demo](#demo)
+* [Backend](#backend)
 
 
 # <a name="the-team"></a>The Team
@@ -36,3 +37,9 @@ Brewsy is where yelp meets untappd but for all things coffee. This site was made
 
 # <a name="demo"></a>Demo
 ![alt text](https://github.com/carriegrossman/capstone-frontend/blob/master/src/images/Screen%20Shot%202020-09-19%20at%204.28.51%20PM.png?raw=true "HomePage")
+
+Site: http://3.14.189.185:5000/
+
+# <a name="backend"></a>Backend
+Check out our back source code [here](https://github.com/carriegrossman/capstone-backend)
+
